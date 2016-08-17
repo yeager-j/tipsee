@@ -4,11 +4,3 @@
 app.controller('mainCtrl', function($scope){
     $scope.hello = "Hello World! Hello, Danny! Hello Summer! Howdy Jackson, Howdy Summer! What up";
 });
-
-app.config(function($routeProvider){
-    $routeProvider
-        .when('/', {
-            templateUrl: 'js/views/home.html',
-            controller: ''
-        })
-});
