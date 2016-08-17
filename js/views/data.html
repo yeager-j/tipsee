@@ -1,1 +1,17 @@
-Data
+<b>Data!</b>
+
+<ul ng-repeat="entry in tipData">
+    <li><b>{{entry.name}}</b></li>
+    <li>
+        <ul ng-repeat="days in entry.days">
+            <li>Day: <b>{{days.date}}</b></li>
+            <li>
+                <ul>
+                    <li>Tip Amount: {{days.tipAmount}}</li>
+                    <li>Base Pay: {{days.basePay}}</li>
+                    <li>Hours: {{days.hours}}</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
