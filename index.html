@@ -3,19 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>Tipsee App</title>
-    <link href="node_modules/angular-material/angular-material.min.css" rel="stylesheet">
-    <link href="compass/sass/styles.css" rel="stylesheet">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Candal|Titillium+Web" rel="stylesheet">
+
+    <link href="css/material-kit.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+
 </head>
 <body ng-controller="mainCtrl">
+
+<nav class="navbar navbar-fixed-top navbar-color-on-scroll navbar-info">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/">
+                Tipsee
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navigation-index">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#/">
+                        <i class="fa fa-home"></i> Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#/data">
+                        <i class="fa fa-dashboard"></i> Data
+                    </a>
+                </li>
+                <li>
+                    <a href="#/schedule">
+                        <i class="fa fa-calendar"></i> Schedule
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 <div ng-view></div>
 
 <!--Dependencies-->
 <script src="node_modules/angular/angular.min.js"></script>
 <script src="node_modules/angular-route/angular-route.min.js"></script>
-<script src="node_modules/angular-aria/angular-aria.min.js"></script>
-<script src="node_modules/angular-animate/angular-animate.min.js"></script>
-<script src="node_modules/angular-material/angular-material.min.js"></script>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="js/material-kit.js"></script>
+<script src="js/nouislider.min.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
 
 <!--Main App-->
 <script src="js/app.js"></script>
@@ -26,8 +71,73 @@
 <script src="js/controllers/home-controller.js"></script>
 <script src="js/controllers/schedule-controller.js"></script>
 
-
 <!--Data-->
 <script src="js/data/data.js"></script>
+
+<script>
+    //jQuery is required to run this code
+    $( document ).ready(function() {
+
+        scaleVideoContainer();
+
+        initBannerVideoSize('.video-container .poster img');
+        initBannerVideoSize('.video-container .filter');
+        initBannerVideoSize('.video-container video');
+
+        $(window).on('resize', function() {
+            scaleVideoContainer();
+            scaleBannerVideoSize('.video-container .poster img');
+            scaleBannerVideoSize('.video-container .filter');
+            scaleBannerVideoSize('.video-container video');
+        });
+
+    });
+
+    function scaleVideoContainer() {
+
+        var height = $(window).height() + 5;
+        var unitHeight = parseInt(height) + 'px';
+        $('.homepage-hero-module').css('height',unitHeight);
+
+    }
+
+    function initBannerVideoSize(element){
+
+        $(element).each(function(){
+            $(this).data('height', $(this).height());
+            $(this).data('width', $(this).width());
+        });
+
+        scaleBannerVideoSize(element);
+
+    }
+
+    function scaleBannerVideoSize(element){
+
+        var windowWidth = $(window).width(),
+                windowHeight = $(window).height() + 5,
+                videoWidth,
+                videoHeight;
+
+        console.log(windowHeight);
+
+        $(element).each(function(){
+            var videoAspectRatio = $(this).data('height')/$(this).data('width');
+
+            $(this).width(windowWidth);
+
+            if(windowWidth < 1000){
+                videoHeight = windowHeight;
+                videoWidth = videoHeight / videoAspectRatio;
+                $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
+
+                $(this).width(videoWidth).height(videoHeight);
+            }
+
+            $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+
+        });
+    }
+</script>
 </body>
 </html>
