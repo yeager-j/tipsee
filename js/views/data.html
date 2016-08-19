@@ -1,19 +1,16 @@
 <div class="container content">
-    <b>Data!</b>
+    <h1>Data Per Person</h1>
+    <hr>
 
-    <ul ng-repeat="entry in tipData">
-        <li><b>{{entry.name}}</b></li>
-        <li>
-            <ul ng-repeat="days in entry.days">
-                <li>Day: <b>{{days.date}}</b></li>
-                <li>
-                    <ul>
-                        <li>Tip Amount: {{days.tipAmount}}</li>
-                        <li>Base Pay: {{days.basePay}}</li>
-                        <li>Hours Worked: {{days.hours}}</li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-    </ul>
+    <div class="row">
+        <div class="col-md-4" ng-repeat="entry in tipData">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>{{entry.name}}</h3>
+                    <hr>
+                    <a ng-href="#/data/{{entry.name}}" class="btn btn-lg btn-block btn-info">View Data</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

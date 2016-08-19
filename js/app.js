@@ -18,5 +18,10 @@ app.config(function($routeProvider){
         .when('/data', {
             templateUrl: 'js/views/data.html',
             controller: 'dataCtrl'
+        })
+
+        .when('/data/:person', {
+            templateUrl: 'js/views/data-view.html',
+            controller: 'dataViewCtrl'
         });
 });

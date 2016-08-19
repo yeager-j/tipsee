@@ -1,5 +1,6 @@
 body {
-  overflow: hidden; }
+  overflow: hidden;
+  background-color: #fcfcfc; }
 
 .homepage-hero-module {
   border-right: none;

@@ -1,28 +1,29 @@
 /* line 1, ../compass/sass/styles.scss */
 body {
   overflow: hidden;
+  background-color: #fcfcfc;
 }
 
-/* line 5, ../compass/sass/styles.scss */
+/* line 6, ../compass/sass/styles.scss */
 .homepage-hero-module {
   border-right: none;
   border-left: none;
   position: relative;
 }
 
-/* line 10, ../compass/sass/styles.scss */
+/* line 11, ../compass/sass/styles.scss */
 .no-video .video-container video,
 .touch .video-container video {
   display: none;
 }
 
-/* line 14, ../compass/sass/styles.scss */
+/* line 15, ../compass/sass/styles.scss */
 .no-video .video-container .poster,
 .touch .video-container .poster {
   display: block !important;
 }
 
-/* line 18, ../compass/sass/styles.scss */
+/* line 19, ../compass/sass/styles.scss */
 .video-container {
   position: absolute;
   top: 0;
@@ -33,14 +34,14 @@ body {
   background: #000;
 }
 
-/* line 27, ../compass/sass/styles.scss */
+/* line 28, ../compass/sass/styles.scss */
 .video-container .poster img {
   width: 100%;
   bottom: 0;
   position: absolute;
 }
 
-/* line 32, ../compass/sass/styles.scss */
+/* line 33, ../compass/sass/styles.scss */
 .video-container .filter {
   z-index: 100;
   position: absolute;
@@ -48,19 +49,19 @@ body {
   width: 100%;
 }
 
-/* line 38, ../compass/sass/styles.scss */
+/* line 39, ../compass/sass/styles.scss */
 .video-container video {
   position: absolute;
   z-index: 0;
   bottom: 0;
 }
 
-/* line 43, ../compass/sass/styles.scss */
+/* line 44, ../compass/sass/styles.scss */
 .video-container video.fillWidth {
   width: 100%;
 }
 
-/* line 47, ../compass/sass/styles.scss */
+/* line 48, ../compass/sass/styles.scss */
 .top {
   text-align: center;
   margin-left: 0;
@@ -68,7 +69,7 @@ body {
   position: relative;
 }
 
-/* line 54, ../compass/sass/styles.scss */
+/* line 55, ../compass/sass/styles.scss */
 .top-wrapper {
   position: absolute;
   width: 100%;
@@ -76,7 +77,7 @@ body {
   transform: translateY(-50%);
 }
 
-/* line 61, ../compass/sass/styles.scss */
+/* line 62, ../compass/sass/styles.scss */
 .top h1 {
   color: white;
   font-size: 120px;
@@ -86,7 +87,7 @@ body {
   padding: 50px;
 }
 
-/* line 70, ../compass/sass/styles.scss */
+/* line 71, ../compass/sass/styles.scss */
 .top p {
   color: white;
   font-size: 30px;
@@ -96,13 +97,13 @@ body {
   text-shadow: 1px 1px 2px black;
 }
 
-/* line 79, ../compass/sass/styles.scss */
+/* line 80, ../compass/sass/styles.scss */
 .navbar-brand {
   font-size: 36px;
   font-family: 'Titillium Web', sans-serif;
 }
 
-/* line 84, ../compass/sass/styles.scss */
+/* line 85, ../compass/sass/styles.scss */
 .content {
   margin-top: 100px;
 }
