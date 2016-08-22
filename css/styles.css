@@ -1,6 +1,5 @@
 /* line 1, ../compass/sass/styles.scss */
 body {
-  overflow: hidden;
   background-color: #fcfcfc;
 }
 
@@ -26,12 +25,12 @@ body {
 /* line 19, ../compass/sass/styles.scss */
 .video-container {
   position: absolute;
-  top: 0;
+  top: -10px;
   left: 0;
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  background: #000;
+  background-image: url(../../img/Coffee-Shot.jpg);
 }
 
 /* line 28, ../compass/sass/styles.scss */
@@ -59,9 +58,11 @@ body {
 /* line 44, ../compass/sass/styles.scss */
 .video-container video.fillWidth {
   width: 100%;
+  position: absolute;
+  top: 0;
 }
 
-/* line 48, ../compass/sass/styles.scss */
+/* line 50, ../compass/sass/styles.scss */
 .top {
   text-align: center;
   margin-left: 0;
@@ -69,7 +70,7 @@ body {
   position: relative;
 }
 
-/* line 55, ../compass/sass/styles.scss */
+/* line 57, ../compass/sass/styles.scss */
 .top-wrapper {
   position: absolute;
   width: 100%;
@@ -77,7 +78,7 @@ body {
   transform: translateY(-50%);
 }
 
-/* line 62, ../compass/sass/styles.scss */
+/* line 64, ../compass/sass/styles.scss */
 .top h1 {
   color: white;
   font-size: 120px;
@@ -87,7 +88,7 @@ body {
   padding: 50px;
 }
 
-/* line 71, ../compass/sass/styles.scss */
+/* line 73, ../compass/sass/styles.scss */
 .top p {
   color: white;
   font-size: 30px;
@@ -97,13 +98,13 @@ body {
   text-shadow: 1px 1px 2px black;
 }
 
-/* line 80, ../compass/sass/styles.scss */
+/* line 82, ../compass/sass/styles.scss */
 .navbar-brand {
   font-size: 36px;
   font-family: 'Titillium Web', sans-serif;
 }
 
-/* line 85, ../compass/sass/styles.scss */
+/* line 87, ../compass/sass/styles.scss */
 .content {
   margin-top: 100px;
 }
