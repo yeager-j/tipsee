@@ -17,7 +17,7 @@
 </head>
 <body ng-controller="mainCtrl">
 
-<nav class="navbar navbar-fixed-top navbar-color-on-scroll navbar-info" ng-class="{'navbar-transparent': isActive('/')}">
+<nav class="navbar navbar-fixed-top navbar-color-on-scroll navbar-info" ng-class="{'navbar-transparent': isActive('')}">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
@@ -33,22 +33,22 @@
 
         <div class="collapse navbar-collapse" id="navigation-index" ng-controller="loginCtrl">
             <ul class="nav navbar-nav navbar-right">
-                <li ng-class="{active: isActive('/')}">
+                <li ng-class="{active: isActive('')}">
                     <a href="#/">
                         <i class="fa fa-home"></i> Home
                     </a>
                 </li>
-                <li ng-class="{active: isActive('/data')}">
+                <li ng-class="{active: isActive('data')}">
                     <a href="#/data" ng-if="isLoggedIn()">
                         <i class="fa fa-dashboard"></i> Data
                     </a>
                 </li>
-                <li ng-class="{active: isActive('/schedule')}">
+                <li ng-class="{active: isActive('schedule')}">
                     <a href="#/schedule" ng-if="isLoggedIn()">
                         <i class="fa fa-calendar"></i> Schedule
                     </a>
                 </li>
-                <li ng-class="{active: isActive('/login')}">
+                <li ng-class="{active: isActive('login')}">
                     <a href="#/" ng-click="logOut()" ng-if="isLoggedIn()">
                         <i class="fa fa-remove"></i> Log Out
                     </a>
