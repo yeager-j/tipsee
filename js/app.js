@@ -1,7 +1,7 @@
 /**
  * Created by Jackson on 8/17/16.
  */
-app = angular.module('tipsee', ['ngRoute']);
+app = angular.module('tipsee', ['ngRoute', 'ngCookies']);
 
 app.config(function($routeProvider){
     $routeProvider
@@ -23,5 +23,10 @@ app.config(function($routeProvider){
         .when('/data/:person', {
             templateUrl: 'js/views/data-view.html',
             controller: 'dataViewCtrl'
-        });
+        })
+
+        .when('/login', {
+            templateUrl: 'js/views/login.html',
+            controller: 'loginCtrl'
+        })
 });

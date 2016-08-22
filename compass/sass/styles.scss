@@ -18,12 +18,12 @@ body{
 }
 .video-container {
   position: absolute;
-  top: 0;
+  top: -10px;
   left: 0;
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  background: #000;
+  background-image: url(../../img/Coffee-Shot.jpg);
 }
 .video-container .poster img {
   width: 100%;
@@ -43,6 +43,8 @@ body{
 }
 .video-container video.fillWidth {
   width: 100%;
+  position: absolute;
+  top: 0;
 }
 
 .top {
