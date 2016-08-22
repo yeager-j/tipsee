@@ -29,4 +29,14 @@ app.config(function($routeProvider){
             templateUrl: 'js/views/login.html',
             controller: 'loginCtrl'
         })
+
+        .when('/modalcontent',{
+            templateUrl:'js/views/modalcontet.html',
+            controller:'scheduleCtrl'
+        })
+
+        .when('/calendarControl',{
+            templateUrl:'js/views/calendarControl.html',
+            controller:'scheduleCtrl'
+        })
 });

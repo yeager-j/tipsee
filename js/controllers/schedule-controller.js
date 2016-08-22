@@ -11,6 +11,7 @@ app.controller('scheduleCtrl', function(moment, alert, calendarConfig){
     vm.calendarView = 'month';
     vm.viewDate = new Date();
     var actions = [{
+      // icon 
       label: '<i class=\'glyphicon glyphicon-pencil\'></i>',
       onClick: function(args) {
         alert.show('Edited', args.calendarEvent);
@@ -21,34 +22,7 @@ app.controller('scheduleCtrl', function(moment, alert, calendarConfig){
         alert.show('Deleted', args.calendarEvent);
       }
     }];
-    vm.events = [
-      {
-        title: 'An event',
-        color: calendarConfig.colorTypes.warning,
-        startsAt: moment().startOf('week').subtract(2, 'days').add(8, 'hours').toDate(),
-        endsAt: moment().startOf('week').add(1, 'week').add(9, 'hours').toDate(),
-        draggable: true,
-        resizable: true,
-        actions: actions
-      }, {
-        title: '<i class="glyphicon glyphicon-asterisk"></i> <span class="text-primary">Another event</span>, with a <i>html</i> title',
-        color: calendarConfig.colorTypes.info,
-        startsAt: moment().subtract(1, 'day').toDate(),
-        endsAt: moment().add(5, 'days').toDate(),
-        draggable: true,
-        resizable: true,
-        actions: actions
-      }, {
-        title: 'This is a really long event title that occurs on every year',
-        color: calendarConfig.colorTypes.important,
-        startsAt: moment().startOf('day').add(7, 'hours').toDate(),
-        endsAt: moment().startOf('day').add(19, 'hours').toDate(),
-        recursOn: 'year',
-        draggable: true,
-        resizable: true,
-        actions: actions
-      }
-    ];
+    vm.events = [];
 
     vm.isCellOpen = true;
 
@@ -87,29 +61,15 @@ app.controller('scheduleCtrl', function(moment, alert, calendarConfig){
 
 
 
-  });
+//pop up notification for event
+function notification(){
+  if(Date.now()===){
 
-
-
-
-  app.factory('alert', function($uibModal) {
-
-    function show(action, event) {
-      return $uibModal.open({
-        templateUrl: 'modalContent.html',
-        controller: function() {
-          var vm = this;
-          vm.action = action;
-          vm.event = event;
-        },
-        controllerAs: 'vm'
-      });
-    }
-
-    return {
-      show: show
-    };
+  }
+} //end of notification function
 
   });
+
+
 
 
