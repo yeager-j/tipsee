@@ -51,6 +51,11 @@
                         <i class="fa fa-calendar"></i> Schedule
                     </a>
                 </li>
+                <li ng-class="{active: isActive('chat')}">
+                    <a href="#/chat" ng-if="isLoggedIn()">
+                        <i class="fa fa-comments"></i> Chat
+                    </a>
+                </li>
                 <li ng-class="{active: isActive('login')}">
                     <a href="#/" ng-click="logOut()" ng-if="isLoggedIn()">
                         <i class="fa fa-remove"></i> Log Out
