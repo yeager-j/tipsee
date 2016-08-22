@@ -49,7 +49,7 @@ var tipData = [
         name: "Jackson",
         days: [
             {
-                tipAmount: 3.00,
+                tipAmount: 30.00,
                 basePay: 120.00,
                 hours: 10,
                 date: Date.now()
