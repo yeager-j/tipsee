@@ -9,18 +9,18 @@
 	      <div class="btn-group">
 
 	        <button
-	          class="btn btn-inverse"
+	          class="btn btn-danger"
 	          mwl-date-modifier
 	          date="vm.viewDate"
 	          decrement="vm.calendarView">
 	          Previous
 	        </button>
 	        <button
-	          class="btn btn-inverse" mwl-date-modifier date="vm.viewDate" set-to-today>
+	          class="btn btn-danger" mwl-date-modifier date="vm.viewDate" set-to-today>
 	          Today
 	        </button>
 	        <button
-	          class="btn btn-inverse" mwl-date-modifier date="vm.viewDate"  increment="vm.calendarView">
+	          class="btn btn-danger" mwl-date-modifier date="vm.viewDate"  increment="vm.calendarView">
 	          Next
 	        </button>
 	      </div>
@@ -30,10 +30,10 @@
 
 	    <div class="col-md-6 text-center">
 	      <div class="btn-group">
-	        <label class="btn btn-inverse" ng-model="vm.calendarView" uib-btn-radio="'year'">Year</label>
-	        <label class="btn btn-inverse" ng-model="vm.calendarView" uib-btn-radio="'month'">Month</label>
-	        <label class="btn btn-inversse" ng-model="vm.calendarView" uib-btn-radio="'week'">Week</label>
-	        <label class="btn btn-inverse" ng-model="vm.calendarView" uib-btn-radio="'day'">Day</label>
+	        <label class="btn btn-danger" ng-model="vm.calendarView" uib-btn-radio="'year'">Year</label>
+	        <label class="btn btn-danger" ng-model="vm.calendarView" uib-btn-radio="'month'">Month</label>
+	        <label class="btn btn-danger" ng-model="vm.calendarView" uib-btn-radio="'week'">Week</label>
+	        <label class="btn btn-danger" ng-model="vm.calendarView" uib-btn-radio="'day'">Day</label>
 	      </div>
 	    </div>
 
@@ -60,7 +60,7 @@
 	  <h3 id="event-editor">
 	    Edit events
 	    <button
-	      class="btn btn-info pull-right"
+	      class="btn btn-success pull-right"
 	      ng-click="vm.addEvent()">
 	      Add new
 	    </button>
