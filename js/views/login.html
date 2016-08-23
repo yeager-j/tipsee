@@ -1,24 +1,30 @@
-<div class="login">
-    <div class="login-wrapper">
-        <h1>Log In</h1>
-        <div class="login-form">
-            <form>
-                <div class="form-group label-floating">
-                    <label class="control-label">Username</label>
-                    <input type="text" class="form-control" ng-model="username">
+<md-content class="md-padding" layout-xs="column" layout="row" layout-align="center">
+    <md-card style="width: 500px;">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Login to Tipsee</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <form name="loginForm">
+                <div layout-gt-lg="row">
+                    <md-input-container class="md-block" flex-gt-lg>
+                        <label>Username</label>
+                        <input ng-model="username">
+                    </md-input-container>
                 </div>
-                <div class="form-group label-floating">
-                    <label class="control-label">Password</label>
-                    <input type="password" class="form-control">
+                <div layout-gt-lg="row">
+                    <md-input-container class="md-block" flex-gt-lg>
+                        <label>Password</label>
+                        <input ng-model="password" type="password">
+                    </md-input-container>
                 </div>
-                <div class="form-group">
-                    <a class="btn btn-success btn-block btn-lg" href="#/" ng-click="submit()">Log In</a>
-                </div>
-                <a href="#/">Forgot Password</a>
             </form>
-        </div>
-        <div class="login-nav">
-            <a class="btn btn-danger" href="#/">Back</a>
-        </div>
-    </div>
-</div>
+            <a href="#/">Forgot Password</a>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-raised md-primary" ng-click="submit()" href="#/">Log In</md-button>
+            <md-button class="md-raised">Register</md-button>
+        </md-card-actions>
+    </md-card>
+</md-content>

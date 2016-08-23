@@ -8,73 +8,91 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Candal|Titillium+Web" rel="stylesheet">
-
-    <link href="css/material-kit.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/login.css" rel="stylesheet">
-
-
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="node_modules/angular-material/angular-material.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/angular-bootstrap-colorpicker/3.0.25/css/colorpicker.min.css" rel="stylesheet">
     <link href="//mattlewis92.github.io/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet">
+
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 <body ng-controller="mainCtrl">
 
-<nav class="navbar navbar-fixed-top navbar-color-on-scroll navbar-info" ng-class="{'navbar-transparent': isActive('')}">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#/">
-                Tipsee
-            </a>
+<div layout="column" layout-fill>
+    <md-toolbar ng-controller="loginCtrl">
+        <div class="md-toolbar-tools">
+            <h1>
+                <span ng-if="!isLoggedIn()">Tipsee</span>
+                <span ng-if="isLoggedIn()">Logged in as {{currentUser}}</span>
+            </h1>
+            <span flex></span>
+            <md-button href="#/">Home</md-button>
+            <md-button href="#/data">Your Data</md-button>
+            <md-button href="#/schedule">Calendar</md-button>
+            <md-button href="#/login" ng-if="!isLoggedIn()">Login</md-button>
+            <md-button href="#/" ng-if="isLoggedIn()" ng-click="logOut()">Log out</md-button>
         </div>
+    </md-toolbar>
+    <md-content flex ng-view>
 
-        <div class="collapse navbar-collapse" id="navigation-index" ng-controller="loginCtrl">
-            <ul class="nav navbar-nav navbar-right">
-                <li ng-class="{active: isActive('')}">
-                    <a href="#/">
-                        <i class="fa fa-home"></i> Home
-                    </a>
-                </li>
-                <li ng-class="{active: isActive('data')}">
-                    <a href="#/data" ng-if="isLoggedIn()">
-                        <i class="fa fa-dashboard"></i> Data
-                    </a>
-                </li>
-                <li ng-class="{active: isActive('schedule')}">
-                    <a href="#/schedule" ng-if="isLoggedIn()">
-                        <i class="fa fa-calendar"></i> Schedule
-                    </a>
-                </li>
-                <li ng-class="{active: isActive('login')}">
-                    <a href="#/" ng-click="logOut()" ng-if="isLoggedIn()">
-                        <i class="fa fa-remove"></i> Log Out
-                    </a>
+    </md-content>
+</div>
 
-                    <a href="#/login" ng-if="!isLoggedIn()">
-                        <i class="fa fa-users"></i> Log In
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<!--<nav class="navbar navbar-fixed-top navbar-color-on-scroll navbar-info" ng-class="{'navbar-transparent': isActive('')}">-->
+    <!--<div class="container">-->
+        <!--<div class="navbar-header">-->
+            <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">-->
+                <!--<span class="sr-only">Toggle navigation</span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
+            <!--<a class="navbar-brand" href="#/">-->
+                <!--Tipsee-->
+            <!--</a>-->
+        <!--</div>-->
 
-<div ng-view></div>
+        <!--<div class="collapse navbar-collapse" id="navigation-index" ng-controller="loginCtrl">-->
+            <!--<ul class="nav navbar-nav navbar-right">-->
+                <!--<li ng-class="{active: isActive('')}">-->
+                    <!--<a href="#/">-->
+                        <!--<i class="fa fa-home"></i> Home-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li ng-class="{active: isActive('data')}">-->
+                    <!--<a href="#/data" ng-if="isLoggedIn()">-->
+                        <!--<i class="fa fa-dashboard"></i> Data-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li ng-class="{active: isActive('schedule')}">-->
+                    <!--<a href="#/schedule" ng-if="isLoggedIn()">-->
+                        <!--<i class="fa fa-calendar"></i> Schedule-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li ng-class="{active: isActive('login')}">-->
+                    <!--<a href="#/" ng-click="logOut()" ng-if="isLoggedIn()">-->
+                        <!--<i class="fa fa-remove"></i> Log Out-->
+                    <!--</a>-->
+
+                    <!--<a href="#/login" ng-if="!isLoggedIn()">-->
+                        <!--<i class="fa fa-users"></i> Log In-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</nav>-->
+
+
+
+
 
 <!--Dependencies-->
 <script src="node_modules/angular/angular.min.js"></script>
 <script src="node_modules/angular-route/angular-route.min.js"></script>
 <script src="node_modules/angular-cookies/angular-cookies.min.js"></script>
+<script src="node_modules/angular-animate/angular-animate.min.js"></script>
+<script src="node_modules/angular-aria/angular-aria.min.js"></script>
+<script src="node_modules/angular-material/angular-material.min.js"></script>
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="js/material-kit.js"></script>
-<script src="js/nouislider.min.js"></script>
-<script src="js/bootstrap-datepicker.js"></script>
 
 
 <!-- CALENDAR -->

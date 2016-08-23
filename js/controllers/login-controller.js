@@ -1,7 +1,7 @@
 /**
  * Created by Jackson on 8/22/16.
  */
-app.controller('loginCtrl', function($scope, $cookies){
+app.controller('loginCtrl', function($scope, $rootScope, $cookies){
     $scope.submit = function(){
         $cookies.put('currentUser', $scope.username);
     };
@@ -12,5 +12,7 @@ app.controller('loginCtrl', function($scope, $cookies){
 
     $scope.isLoggedIn = function(){
         return $cookies.get('currentUser') !== '';
-    }
+    };
+
+    $rootScope.currentUser = $cookies.get('currentUser');
 });
