@@ -1,8 +1,4 @@
 <div class="container content">
-
-
-
-
 	<div ng-controller="scheduleCtrl as vm">
 
 	  <h2 class="text-center">{{ vm.calendarTitle }}</h2>
@@ -129,31 +125,31 @@
 	              close-text="Close">
 	            <span class="input-group-btn">
 	              <button
-	                type="button"
-	                class="btn btn-default"
-	                ng-click="vm.toggle($event, 'endOpen', event)">
+                          type="button"
+                          class="btn btn-default"
+                          ng-click="vm.toggle($event, 'endOpen', event)">
 	                <i class="glyphicon glyphicon-calendar"></i>
 	              </button>
 	            </span>
-	          </p>
-	          <div
-	            uib-timepicker
-	            ng-model="event.endsAt"
-	            hour-step="1"
-	            minute-step="15"
-	            show-meridian="true">
-	          </div>
-	        </td>
-	        <td>
-	          <button
-	            class="btn btn-danger"
-	            ng-click="vm.events.splice($index, 1)">
-	            Delete
-	          </button>
-	        </td>
-	      </tr>
-	    </tbody>
+                    </p>
+                    <div
+                            uib-timepicker
+                            ng-model="event.endsAt"
+                            hour-step="1"
+                            minute-step="15"
+                            show-meridian="true">
+                    </div>
+                </td>
+                <td>
+                    <button
+                            class="btn btn-danger"
+                            ng-click="vm.events.splice($index, 1)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+            </tbody>
 
-	  </table>
-	</div>
+        </table>
+    </div>
 </div>
