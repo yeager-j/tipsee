@@ -7,6 +7,52 @@
   border-radius: 2px;
 }
 
+/* line 9, ../compass/sass/components/_card.scss */
+.data-content {
+  max-height: 600px;
+  overflow: scroll;
+}
+
+/* line 14, ../compass/sass/components/_card.scss */
+.scroll {
+  border: 0;
+  border-collapse: collapse;
+}
+
+/* line 19, ../compass/sass/components/_card.scss */
+.scroll tr {
+  display: flex;
+}
+
+/* line 23, ../compass/sass/components/_card.scss */
+.scroll td {
+  padding: 3px;
+  flex: 1 auto;
+  width: 1px;
+}
+
+/* line 29, ../compass/sass/components/_card.scss */
+.scroll thead tr:after {
+  content: '';
+  overflow-y: scroll;
+  visibility: hidden;
+  height: 0;
+}
+
+/* line 36, ../compass/sass/components/_card.scss */
+.scroll thead th {
+  flex: 1 auto;
+  display: block;
+}
+
+/* line 41, ../compass/sass/components/_card.scss */
+.scroll tbody {
+  display: block;
+  width: 100%;
+  overflow-y: auto;
+  height: 500px;
+}
+
 /* line 3, ../compass/sass/styles.scss */
 body {
   background-color: #fcfcfc;
