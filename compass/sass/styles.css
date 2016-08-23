@@ -1,3 +1,10 @@
+.card {
+  padding: 15px;
+  -webkit-box-shadow: 0 3px 3px 1px #999999;
+  -moz-box-shadow: 0 3px 3px 1px #999999;
+  box-shadow: 0 3px 3px 1px #999999;
+  border-radius: 2px; }
+
 body {
   background-color: #fcfcfc; }
 

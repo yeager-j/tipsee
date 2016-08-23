@@ -2,64 +2,42 @@
  * Created by Jackson on 8/17/16.
  */
 
-function Entry(name, date, tipAmount, basePay, hours){
-    this.name = name;
-    this.date = date;
-    this.tipAmount = tipAmount;
-    this.basePay = basePay;
-    this.hours = hours;
-}
-
 var tipData = [
     {
         name: "Danny",
-        days: [
-            {
-                tipAmount: 2.00,
-                basePay: 120.00,
-                hours: 10,
-                date: Date.now()
-            },
-            {
-                tipAmount: 3.00,
-                basePay: 120.00,
-                hours: 11,
-                date: Date.now()
-            }
-        ]
+        days: []
     },
     {
         name: "Summer",
-        days: [
-            {
-                tipAmount: 4.00,
-                basePay: 120.00,
-                hours: 10,
-                date: Date.now()
-            },
-            {
-                tipAmount: 7.00,
-                basePay: 120.00,
-                hours: 11,
-                date: Date.now()
-            }
-        ]
+        days: []
     },
     {
         name: "Jackson",
-        days: [
-            {
-                tipAmount: 30.00,
-                basePay: 120.00,
-                hours: 10,
-                date: Date.now()
-            },
-            {
-                tipAmount: 5.00,
-                basePay: 120.00,
-                hours: 11,
-                date: Date.now()
-            }
-        ]
+        days: []
     }
 ];
+
+for(var i = 0; i < 10; i++){
+    tipData[0].days.push({
+        date: Date.now() + 1000 * 24 * 60 * 60 * i,
+        tipAmount: Math.random() * 15,
+        basePay: 120,
+        hours: 8
+    });
+
+    tipData[1].days.push({
+        date: Date.now() + 1000 * 24 * 60 * 60 * i,
+        tipAmount: Math.random() * 15,
+        basePay: 120,
+        hours: 8
+    });
+
+    tipData[2].days.push({
+        date: Date.now() + 1000 * 24 * 60 * 60 * i,
+        tipAmount: Math.random() * 15,
+        basePay: 120,
+        hours: 8
+    });
+
+    console.log(Date.now() + 24 * 60 * 60 * i);
+}
