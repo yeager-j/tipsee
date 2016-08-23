@@ -28,7 +28,10 @@ app.controller('scheduleCtrl', function(moment, alert, calendarConfig){
 
     vm.isCellOpen = true;
 
+ 
+//adds event
     vm.addEvent = function() {
+     
       vm.events.push({
         title: 'New event',
         info:'Info',
@@ -39,6 +42,7 @@ app.controller('scheduleCtrl', function(moment, alert, calendarConfig){
         draggable: true,
         resizable: true
       });
+      console.log(vm.events);
     };
 
     vm.eventClicked = function(event) {
