@@ -10,6 +10,8 @@
           var vm = this;
           vm.action = action;
           vm.event = event;
+          
+
         },
         controllerAs: 'vm'
       });
@@ -20,3 +22,5 @@
     };
 
   });
+
+  

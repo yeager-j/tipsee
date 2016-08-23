@@ -30,13 +30,11 @@ app.config(function($routeProvider){
             controller: 'loginCtrl'
         })
 
-        .when('/modalcontent',{
-            templateUrl:'js/views/modalcontet.html',
-            controller:'scheduleCtrl'
-        })
 
-        .when('/calendarControl',{
-            templateUrl:'js/views/calendarControl.html',
-            controller:'scheduleCtrl'
+        .when ('/mastersched',{
+            templateUrl: 'js/views/master-sched.html',
+            controller: 'masterSchedCtrl'
+
         })
 });
+

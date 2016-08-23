@@ -12,7 +12,7 @@
 
 
 
-	<div ng-controller="scheduleCtrl as vm">
+	<div ng-controller="masterSchedCtrl as vm">
 
 	  <h2 class="text-center">{{ vm.calendarTitle }}</h2>
 
@@ -85,7 +85,6 @@
 	    <thead>
 	      <tr>
 	        <th>Title</th>
-	        <th>Information</th>
 	        <th>Primary color</th>
 	        <th>Secondary color</th>
 	        <th>Starts at</th>
@@ -101,12 +100,6 @@
 	            type="text"
 	            class="form-control"
 	            ng-model="event.title">
-	        </td>
-	        <td>
-	          <input
-	            type="text"
-	            class="form-control"
-	            ng-model="event.info">
 	        </td>
 	        <td>
 	          <input class="form-control" colorpicker type="text" ng-model="event.color.primary">
