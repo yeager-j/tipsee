@@ -1,8 +1,14 @@
-   <h2>Tip Data Graph</h2>
-    <c3chart bindto-id="chart1" chart-data="datapoints" chart-columns="datacolumns">
+<div style="padding-top: 80px"><h2>Tip Data Graph</h2>
+    <c3chart bindto-id="chart1" show-subchart="true" enable-zoom="true" chart-data="datapoints" chart-columns="datacolumns" chart-x="datax">
+
+    <chart-points point-radius="5" show-point="true" point-expand-enabled="true" point-expand-radius="20"/>
+
+    <!-- <chart-tooltip value-format-function="vm.setValue" title-format-function="vm.setTitle"/> -->
+
     <chart-axis>
         <chart-axis-x axis-id="top-1" axis-type="timeseries">
-            <chart-axis-x-tick tick-format="%Y-%m-%d"/>
+            <chart-axis-x-tick tick-rotate="45" tick-format="%m-%d-%Y"/>
         </chart-axis-x>
     </chart-axis>
     </c3chart>
+</div>
