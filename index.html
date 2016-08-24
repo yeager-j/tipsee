@@ -49,6 +49,11 @@
                         <i class="fa fa-dashboard"></i> Data
                     </a>
                 </li>
+                <li ng-class="{active: isActive('graph')}">
+                    <a href="#/graph" ng-if="isLoggedIn()">
+                        <i class="fa fa-area-chart"></i> Graphs
+                    </a>
+                </li>
                 <li ng-class="{active: isActive('schedule')}">
                     <a href="#/schedule" ng-if="isLoggedIn()">
                         <i class="fa fa-calendar"></i> Schedule
