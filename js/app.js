@@ -29,4 +29,12 @@ app.config(function($routeProvider){
             templateUrl: 'js/views/login.html',
             controller: 'loginCtrl'
         })
+
+
+        .when ('/mastersched',{
+            templateUrl: 'js/views/master-sched.html',
+            controller: 'masterSchedCtrl'
+
+        })
 });
+
