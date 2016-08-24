@@ -17,6 +17,9 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/angular-bootstrap-colorpicker/3.0.25/css/colorpicker.min.css" rel="stylesheet">
     <link href="//mattlewis92.github.io/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet">
+    
+    <!-- Load c3.css -->
+    <link href="css/c3.css" rel="stylesheet" type="text/css">
 </head>
 <body ng-controller="mainCtrl">
 
@@ -46,6 +49,11 @@
                         <i class="fa fa-dashboard"></i> Data
                     </a>
                 </li>
+                <li ng-class="{active: isActive('graph')}">
+                    <a href="#/graph" ng-if="isLoggedIn()">
+                        <i class="fa fa-area-chart"></i> Graphs
+                    </a>
+                </li>
                 <li ng-class="{active: isActive('schedule')}">
                     <a href="#/schedule" ng-if="isLoggedIn()">
                         <i class="fa fa-calendar"></i> Schedule
@@ -60,6 +68,7 @@
                         <i class="fa fa-users"></i> Log In
                     </a>
                 </li>
+                <p class="navbar-text" ng-if="isLoggedIn()">Welcome, {{currentUser}}!</p>
             </ul>
         </div>
     </div>
@@ -68,13 +77,23 @@
 <div ng-view></div>
 
 <!--Dependencies-->
+
 <script src="node_modules/angular/angular.min.js"></script>
+
 <script src="node_modules/angular-route/angular-route.min.js"></script>
 <script src="node_modules/angular-cookies/angular-cookies.min.js"></script>
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="js/material-kit.js"></script>
 <script src="js/nouislider.min.js"></script>
 <script src="js/bootstrap-datepicker.js"></script>
+
+<!-- d3.js and c3.js -->
+<script src="js/graph/d3-3.4.11.min.js" charset="utf-8"></script>
+<script src="js/graph/c3-0.2.4.min.js"></script>
+<script src="js/graph/c3js-directive.js"></script>
+
+
+
 
 
 <!-- CALENDAR -->
@@ -88,6 +107,7 @@
 
 <!--Main App-->
 <script src="js/app.js"></script>
+<script src="js/helper.js"></script>
 
 <!--Controllers-->
 <script src="js/controllers/main-controller.js"></script>
@@ -96,9 +116,16 @@
 <script src="js/controllers/home-controller.js"></script>
 <script src="js/controllers/schedule-controller.js"></script>
 <script src="js/controllers/login-controller.js"></script>
+<script src="js/controllers/graph-controller.js"></script>
+
+<!-- Directives -->
+<!-- <script src="js/directives/graphDirective.js"></script> -->
 
 <!--Data-->
 <script src="js/data/data.js"></script>
+
+<!-- D3 Service Module -->
+<script src="services/d3.js"></script>
 
 <script>
     //jQuery is required to run this code
