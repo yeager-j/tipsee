@@ -1,5 +1,18 @@
 <div class="container content">
-	<div ng-controller="scheduleCtrl as vm">
+	<mwl-calendar
+	    view="calendarView"
+	    view-date="calendarDate"
+	    events="events"
+	    view-title="calendarTitle"
+	    on-event-click="eventClicked(calendarEvent)"
+	    on-event-times-changed="calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
+	    cell-is-open="true">
+	</mwl-calendar>
+
+
+
+
+	<div ng-controller="masterSchedCtrl as vm">
 
 	  <h2 class="text-center">{{ vm.calendarTitle }}</h2>
 
@@ -9,18 +22,18 @@
 	      <div class="btn-group">
 
 	        <button
-	          class="btn btn-danger"
+	          class="btn btn-info"
 	          mwl-date-modifier
 	          date="vm.viewDate"
 	          decrement="vm.calendarView">
 	          Previous
 	        </button>
 	        <button
-	          class="btn btn-danger" mwl-date-modifier date="vm.viewDate" set-to-today>
+	          class="btn btn-info" mwl-date-modifier date="vm.viewDate" set-to-today>
 	          Today
 	        </button>
 	        <button
-	          class="btn btn-danger" mwl-date-modifier date="vm.viewDate"  increment="vm.calendarView">
+	          class="btn btn-info" mwl-date-modifier date="vm.viewDate"  increment="vm.calendarView">
 	          Next
 	        </button>
 	      </div>
@@ -30,10 +43,10 @@
 
 	    <div class="col-md-6 text-center">
 	      <div class="btn-group">
-	        <label class="btn btn-danger" ng-model="vm.calendarView" uib-btn-radio="'year'">Year</label>
-	        <label class="btn btn-danger" ng-model="vm.calendarView" uib-btn-radio="'month'">Month</label>
-	        <label class="btn btn-danger" ng-model="vm.calendarView" uib-btn-radio="'week'">Week</label>
-	        <label class="btn btn-danger" ng-model="vm.calendarView" uib-btn-radio="'day'">Day</label>
+	        <label class="btn btn-info" ng-model="vm.calendarView" uib-btn-radio="'year'">Year</label>
+	        <label class="btn btn-info" ng-model="vm.calendarView" uib-btn-radio="'month'">Month</label>
+	        <label class="btn btn-info" ng-model="vm.calendarView" uib-btn-radio="'week'">Week</label>
+	        <label class="btn btn-info" ng-model="vm.calendarView" uib-btn-radio="'day'">Day</label>
 	      </div>
 	    </div>
 
@@ -60,7 +73,7 @@
 	  <h3 id="event-editor">
 	    Edit events
 	    <button
-	      class="btn btn-success pull-right"
+	      class="btn btn-info pull-right"
 	      ng-click="vm.addEvent()">
 	      Add new
 	    </button>
@@ -72,7 +85,6 @@
 	    <thead>
 	      <tr>
 	        <th>Title</th>
-	        <th>Information</th>
 	        <th>Primary color</th>
 	        <th>Secondary color</th>
 	        <th>Starts at</th>
@@ -84,13 +96,13 @@
 	    <tbody>
 	      <tr ng-repeat="event in vm.events track by $index">
 	        <td>
-	          <input type="text" class="form-control" ng-model="event.title">
+	          <input
+	            type="text"
+	            class="form-control"
+	            ng-model="event.title">
 	        </td>
 	        <td>
-	          <input type="text" class="form-control" ng-model="event.info">
-	        </td>
-	        <td>
-	          <input class="form-control" colorpicker type="text" ng-model="event.color.primary" >
+	          <input class="form-control" colorpicker type="text" ng-model="event.color.primary">
 	        </td>
 	        <td>
 	          <input class="form-control" colorpicker type="text" ng-model="event.color.secondary">
@@ -98,17 +110,25 @@
 	        <td>
 	          <p class="input-group" style="max-width: 250px">
 	            <input
-	              type="text" class="form-control" readonly uib-datepicker-popup="dd MMMM yyyy"
-	              ng-model="event.startsAt" is-open="event.startOpen" close-text="Close" >
+	              type="text"
+	              class="form-control"
+	              readonly
+	              uib-datepicker-popup="dd MMMM yyyy"
+	              ng-model="event.startsAt"
+	              is-open="event.startOpen"
+	              close-text="Close" >
 	            <span class="input-group-btn">
 	              <button
-	                type="button" class="btn btn-default" ng-click="vm.toggle($event, 'startOpen', event)">
+	                type="button"
+	                class="btn btn-default"
+	                ng-click="vm.toggle($event, 'startOpen', event)">
 	                <i class="glyphicon glyphicon-calendar"></i>
 	              </button>
 	            </span>
 	          </p>
 	          <div
-	            uib-timepicker ng-model="event.startsAt"
+	            uib-timepicker
+	            ng-model="event.startsAt"
 	            hour-step="1"
 	            minute-step="15"
 	            show-meridian="true">
@@ -119,37 +139,38 @@
 	            <input
 	              type="text"
 	              class="form-control"
-	              readonly uib-datepicker-popup="dd MMMM yyyy"
+	              readonly
+	              uib-datepicker-popup="dd MMMM yyyy"
 	              ng-model="event.endsAt"
 	              is-open="event.endOpen"
 	              close-text="Close">
 	            <span class="input-group-btn">
 	              <button
-                          type="button"
-                          class="btn btn-default"
-                          ng-click="vm.toggle($event, 'endOpen', event)">
+	                type="button"
+	                class="btn btn-default"
+	                ng-click="vm.toggle($event, 'endOpen', event)">
 	                <i class="glyphicon glyphicon-calendar"></i>
 	              </button>
 	            </span>
-                    </p>
-                    <div
-                            uib-timepicker
-                            ng-model="event.endsAt"
-                            hour-step="1"
-                            minute-step="15"
-                            show-meridian="true">
-                    </div>
-                </td>
-                <td>
-                    <button
-                            class="btn btn-danger"
-                            ng-click="vm.events.splice($index, 1)">
-                        Delete
-                    </button>
-                </td>
-            </tr>
-            </tbody>
+	          </p>
+	          <div
+	            uib-timepicker
+	            ng-model="event.endsAt"
+	            hour-step="1"
+	            minute-step="15"
+	            show-meridian="true">
+	          </div>
+	        </td>
+	        <td>
+	          <button
+	            class="btn btn-danger"
+	            ng-click="vm.events.splice($index, 1)">
+	            Delete
+	          </button>
+	        </td>
+	      </tr>
+	    </tbody>
 
-        </table>
-    </div>
+	  </table>
+	</div>
 </div>
