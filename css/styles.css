@@ -1,28 +1,83 @@
-/* line 1, ../compass/sass/styles.scss */
+/* line 1, ../compass/sass/components/_card.scss */
+.card {
+  padding: 15px;
+  -webkit-box-shadow: 0 3px 3px 1px #999999;
+  -moz-box-shadow: 0 3px 3px 1px #999999;
+  box-shadow: 0 3px 3px 1px #999999;
+  border-radius: 2px;
+}
+
+/* line 9, ../compass/sass/components/_card.scss */
+.data-content {
+  max-height: 600px;
+  overflow: scroll;
+}
+
+/* line 14, ../compass/sass/components/_card.scss */
+.scroll {
+  border: 0;
+  border-collapse: collapse;
+}
+
+/* line 19, ../compass/sass/components/_card.scss */
+.scroll tr {
+  display: flex;
+}
+
+/* line 23, ../compass/sass/components/_card.scss */
+.scroll td {
+  padding: 3px;
+  flex: 1 auto;
+  width: 1px;
+}
+
+/* line 29, ../compass/sass/components/_card.scss */
+.scroll thead tr:after {
+  content: '';
+  overflow-y: scroll;
+  visibility: hidden;
+  height: 0;
+}
+
+/* line 36, ../compass/sass/components/_card.scss */
+.scroll thead th {
+  flex: 1 auto;
+  display: block;
+}
+
+/* line 41, ../compass/sass/components/_card.scss */
+.scroll tbody {
+  display: block;
+  width: 100%;
+  overflow-y: auto;
+  height: 500px;
+}
+
+/* line 3, ../compass/sass/styles.scss */
 body {
   background-color: #fcfcfc;
 }
 
-/* line 6, ../compass/sass/styles.scss */
+/* line 8, ../compass/sass/styles.scss */
 .homepage-hero-module {
   border-right: none;
   border-left: none;
   position: relative;
 }
 
-/* line 11, ../compass/sass/styles.scss */
+/* line 13, ../compass/sass/styles.scss */
 .no-video .video-container video,
 .touch .video-container video {
   display: none;
 }
 
-/* line 15, ../compass/sass/styles.scss */
+/* line 17, ../compass/sass/styles.scss */
 .no-video .video-container .poster,
 .touch .video-container .poster {
   display: block !important;
 }
 
-/* line 19, ../compass/sass/styles.scss */
+/* line 21, ../compass/sass/styles.scss */
 .video-container {
   position: absolute;
   top: -10px;
@@ -33,14 +88,14 @@ body {
   background-image: url(../../img/Coffee-Shot.jpg);
 }
 
-/* line 28, ../compass/sass/styles.scss */
+/* line 30, ../compass/sass/styles.scss */
 .video-container .poster img {
   width: 100%;
   bottom: 0;
   position: absolute;
 }
 
-/* line 33, ../compass/sass/styles.scss */
+/* line 35, ../compass/sass/styles.scss */
 .video-container .filter {
   z-index: 100;
   position: absolute;
@@ -48,21 +103,21 @@ body {
   width: 100%;
 }
 
-/* line 39, ../compass/sass/styles.scss */
+/* line 41, ../compass/sass/styles.scss */
 .video-container video {
   position: absolute;
   z-index: 0;
   bottom: 0;
 }
 
-/* line 44, ../compass/sass/styles.scss */
+/* line 46, ../compass/sass/styles.scss */
 .video-container video.fillWidth {
   width: 100%;
   position: absolute;
   top: 0;
 }
 
-/* line 50, ../compass/sass/styles.scss */
+/* line 52, ../compass/sass/styles.scss */
 .top {
   text-align: center;
   margin-left: 0;
@@ -70,7 +125,7 @@ body {
   position: relative;
 }
 
-/* line 57, ../compass/sass/styles.scss */
+/* line 59, ../compass/sass/styles.scss */
 .top-wrapper {
   position: absolute;
   width: 100%;
@@ -78,7 +133,7 @@ body {
   transform: translateY(-50%);
 }
 
-/* line 64, ../compass/sass/styles.scss */
+/* line 66, ../compass/sass/styles.scss */
 .top h1 {
   color: white;
   font-size: 120px;
@@ -88,7 +143,7 @@ body {
   padding: 50px;
 }
 
-/* line 73, ../compass/sass/styles.scss */
+/* line 75, ../compass/sass/styles.scss */
 .top p {
   color: white;
   font-size: 30px;
@@ -98,13 +153,13 @@ body {
   text-shadow: 1px 1px 2px black;
 }
 
-/* line 82, ../compass/sass/styles.scss */
+/* line 84, ../compass/sass/styles.scss */
 .navbar-brand {
   font-size: 36px;
   font-family: 'Titillium Web', sans-serif;
 }
 
-/* line 87, ../compass/sass/styles.scss */
+/* line 89, ../compass/sass/styles.scss */
 .content {
   margin-top: 100px;
 }
