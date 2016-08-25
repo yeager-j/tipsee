@@ -1,7 +1,7 @@
 /**
  * Created by Jackson on 8/17/16.
  */
-app.controller('scheduleCtrl', function(moment, alert, calendarConfig){
+app.controller('masterSchedCtrl', function(moment, alert, calendarConfig){
 
 
 
@@ -28,13 +28,9 @@ app.controller('scheduleCtrl', function(moment, alert, calendarConfig){
 
     vm.isCellOpen = true;
 
- 
-//adds event
     vm.addEvent = function() {
-     
       vm.events.push({
         title: 'New event',
-        info:'Info',
         startsAt: moment().startOf('day').toDate(),
         endsAt: moment().endOf('day').toDate(),
         //#E8FDE7
@@ -42,7 +38,6 @@ app.controller('scheduleCtrl', function(moment, alert, calendarConfig){
         draggable: true,
         resizable: true
       });
-      console.log(vm.events);
     };
 
     vm.eventClicked = function(event) {
