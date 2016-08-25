@@ -14,7 +14,6 @@
     <link href="css/login.css" rel="stylesheet">
 
 
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/angular-bootstrap-colorpicker/3.0.25/css/colorpicker.min.css" rel="stylesheet">
     <link href="//mattlewis92.github.io/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet">
     
@@ -59,6 +58,11 @@
                         <i class="fa fa-calendar"></i> Schedule
                     </a>
                 </li>
+                <li ng-class="{active: isActive('dashboard')}">
+                    <a href="#/dashboard" ng-if="isLoggedIn()">
+                        <i class="fa fa-cog"></i> Dashboard
+                    </a>
+                </li>
                 <li ng-class="{active: isActive('login')}">
                     <a href="#/" ng-click="logOut()" ng-if="isLoggedIn()">
                         <i class="fa fa-remove"></i> Log Out
@@ -79,11 +83,9 @@
 <!--Dependencies-->
 
 <script src="node_modules/angular/angular.min.js"></script>
-
 <script src="node_modules/angular-route/angular-route.min.js"></script>
 <script src="node_modules/angular-cookies/angular-cookies.min.js"></script>
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="js/material-kit.js"></script>
+<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script><script src="js/material-kit.js"></script>
 <script src="js/nouislider.min.js"></script>
 <script src="js/bootstrap-datepicker.js"></script>
 
@@ -91,9 +93,6 @@
 <script src="js/graph/d3-3.4.11.min.js" charset="utf-8"></script>
 <script src="js/graph/c3-0.2.4.min.js"></script>
 <script src="js/graph/c3js-directive.js"></script>
-
-
-
 
 
 <!-- CALENDAR -->
@@ -117,6 +116,8 @@
 <script src="js/controllers/schedule-controller.js"></script>
 <script src="js/controllers/login-controller.js"></script>
 <script src="js/controllers/graph-controller.js"></script>
+<script src="js/controllers/entry-controller.js"></script>
+<script src="js/controllers/user-controller.js"></script>
 
 <!-- Directives -->
 <!-- <script src="js/directives/graphDirective.js"></script> -->

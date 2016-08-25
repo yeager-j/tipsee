@@ -25,6 +25,11 @@ app.config(function($routeProvider){
             controller: 'dataViewCtrl'
         })
 
+        .when('/data/:person/add', {
+            templateUrl: 'js/views/add-entry.html',
+            controller: 'addEntryCtrl'
+        })
+
         .when('/login', {
             templateUrl: 'js/views/login.html',
             controller: 'loginCtrl'
@@ -39,5 +44,10 @@ app.config(function($routeProvider){
         .when('/graph', {
             templateUrl: 'js/views/graph.html',
             controller: 'graphCtrl'
+        })
+
+        .when('/dashboard', {
+            templateUrl: 'js/views/dashboard.html',
+            controller: 'userCtrl'
         })
 });
