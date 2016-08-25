@@ -47,6 +47,6 @@ app.config(function($routeProvider){
         })
 
         .otherwise({
-            redirectTo: '/dashboard'
+            redirectTo: '/login'
         })
 });
