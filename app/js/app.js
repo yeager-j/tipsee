@@ -5,11 +5,6 @@ app = angular.module('tipsee', ['ngRoute', 'ngCookies','mwl.calendar', 'ngAnimat
 
 app.config(function($routeProvider){
     $routeProvider
-        .when('/', {
-            templateUrl: 'js/views/home.html',
-            controller: 'homeCtrl'
-        })
-
         .when('/schedule', {
             templateUrl: 'js/views/schedule.html',
             controller: 'scheduleCtrl'
@@ -49,5 +44,9 @@ app.config(function($routeProvider){
         .when('/dashboard', {
             templateUrl: 'js/views/dashboard.html',
             controller: 'userCtrl'
+        })
+
+        .otherwise({
+            redirectTo: '/dashboard'
         })
 });

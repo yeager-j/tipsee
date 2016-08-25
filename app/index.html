@@ -38,11 +38,6 @@
 
         <div class="collapse navbar-collapse" id="navigation-index" ng-controller="loginCtrl">
             <ul class="nav navbar-nav navbar-right">
-                <li ng-class="{active: isActive('')}">
-                    <a href="#/">
-                        <i class="fa fa-home"></i> Home
-                    </a>
-                </li>
                 <li ng-class="{active: isActive('data')}">
                     <a href="#/data" ng-if="isLoggedIn()">
                         <i class="fa fa-dashboard"></i> Data
@@ -90,8 +85,10 @@
 <script src="js/bootstrap-datepicker.js"></script>
 
 <!-- d3.js and c3.js -->
-<script src="js/graphLibraries/d3-3.4.11.min.js" charset="utf-8"></script>
-<script src="js/graphLibraries/c3-0.2.4.min.js"></script>
+<script src="js/graph/d3-3.4.11.min.js" charset="utf-8"></script>
+
+<script src="js/graph/c3js-directive.js" charset="utf-8"></script>
+<script src="js/graph/c3-0.2.4.min.js" charset="utf-8"></script>
 
 
 <!-- CALENDAR -->
@@ -121,68 +118,5 @@
 
 <!--Data-->
 <script src="js/data/data.js"></script>
-<script>
-    //jQuery is required to run this code
-    $( document ).ready(function() {
-
-        scaleVideoContainer();
-
-        initBannerVideoSize('.video-container .poster img');
-        initBannerVideoSize('.video-container .filter');
-        initBannerVideoSize('.video-container video');
-
-        $(window).on('resize', function() {
-            scaleVideoContainer();
-            scaleBannerVideoSize('.video-container .poster img');
-            scaleBannerVideoSize('.video-container .filter');
-            scaleBannerVideoSize('.video-container video');
-        });
-
-    });
-
-    function scaleVideoContainer() {
-
-        var height = $(window).height() + 5;
-        var unitHeight = parseInt(height) + 'px';
-        $('.homepage-hero-module').css('height',unitHeight);
-
-    }
-
-    function initBannerVideoSize(element){
-
-        $(element).each(function(){
-            $(this).data('height', $(this).height());
-            $(this).data('width', $(this).width());
-        });
-
-        scaleBannerVideoSize(element);
-
-    }
-
-    function scaleBannerVideoSize(element){
-
-        var windowWidth = $(window).width(),
-                windowHeight = $(window).height() + 5,
-                videoWidth,
-                videoHeight;
-
-        $(element).each(function(){
-            var videoAspectRatio = $(this).data('height')/$(this).data('width');
-
-            $(this).width(windowWidth);
-
-            if(windowWidth < 1000){
-                videoHeight = windowHeight;
-                videoWidth = videoHeight / videoAspectRatio;
-                $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
-
-                $(this).width(videoWidth).height(videoHeight);
-            }
-
-            $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
-
-        });
-    }
-</script>
 </body>
 </html>
