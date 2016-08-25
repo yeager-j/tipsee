@@ -45,6 +45,27 @@ app.controller('scheduleCtrl', function(moment, alert, calendarConfig){
       console.log(vm.events);
     };
 
+    console.log(workDays);
+
+    for(var i=0;i<workDays.length;i++){
+      for(var j=0;j<50;j++){
+     
+          vm.events.push({
+            title: 'Work - ' + workDays[i].name,
+            info:"You're working today",
+            startsAt: workDays[i].days[j],
+            endsAt: (1000 * 24 * 60 * 60 * j) - 1000,
+            //#E8FDE7
+            color: calendarConfig.colorTypes.important,
+            draggable: true,
+            resizable: true
+          });
+          console.log(vm.events);
+        
+
+      }
+    }
+
     vm.eventClicked = function(event) {
       alert.show('Clicked', event);
     };
