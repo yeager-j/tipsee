@@ -1,41 +1,7 @@
-/*! c3-angular - v1.3.1 - 2016-08-04
-* https://github.com/jettro/c3-angular-directive
-* Copyright (c) 2016 ; Licensed  */
 angular.module('gridshore.c3js.chart', []);
 angular.module('gridshore.c3js.chart')
     .directive('chartAxes', ChartAxes);
-/**
- * @ngdoc directive
- * @name chartAxes
- * @description
- *  `chart-axes` is used to customize the axes properties. Using this directive you can select the propertie(s) to use for the different categories or for the time field. You can also configure for the different columns to use y or y2.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   c3chart
- *
- * @param {String} valuesX Specify the key in the data object to use for the x value
- *   
- *   {@link http://c3js.org/reference.html#data-x}
- * @param {String} valuesXs Specify the different keys for different data columns in format
- *   columnId:key,columnId:key
- *
- *   {@link http://c3js.org/reference.html#data-xs}
- * @param {String} y Set the id(s) of columns to use the first y value (y). Format is comma separated.
- * 
- *   {@link http://c3js.org/reference.html#data-axes}
- * @param {String} y2 Set the id(s) of columns to use the second y value (y2) Format is comma separated.
- *
- *   {@link http://c3js.org/reference.html#data-axes}
- *
- * @example
- * Usage:
- *   <chart-axes values-x="..." values-Xs="..." y="..." y2="..."/>
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- */
+
 function ChartAxes () {
     var axesLinker = function (scope, element, attrs, chartCtrl) {
         var x = attrs.valuesX;
@@ -84,29 +50,6 @@ function ChartAxes () {
 angular.module('gridshore.c3js.chart')
     .directive('chartAxis', ChartAxis);
 
-/**
- * @ngdoc directive
- * @name chartAxis
- * @description
- *  `chart-axis` is used to customize the axis properties. Can be used to change the orientation of the axis.
- *
- * Restrict To:
- *   Element
- * 
- * Parent element:
- *   c3chart
- *
- * @param {Boolean} axisRotate Configure to rotate the axis, javascript true means we rotate the axis.
- *   
- *   {@link http://c3js.org/reference.html#axis-rotated}
- *
- * @example
- * Usage:
- *   <chart-axis axis-rotate="true"/>
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- */
-
 function ChartAxis () {
     var axisLinker = function (scope, element, attrs, chartCtrl) {
         var rotate = attrs.axisRotate;
@@ -128,71 +71,6 @@ function ChartAxis () {
 
 angular.module('gridshore.c3js.chart')
     .directive('chartAxisX', ChartAxisX);
-
-/**
- * @ngdoc directive
- * @name chartAxisX
- * @description
- *  `chart-axis-x` is used to customize the x axis properties. Using this directive you can padding, size, visibility of the axis.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   chart-axis
- *
- * @param {String} axis-position Location of the label. Can have following values:
- *
- *   - Horizontal: inner-right (default), inner-center, inner-left, outer-right, outer-center, outer-left 
- *   - Vertical: inner-top (default), inner-middle, inner-bottom, outer-top, outer-middle, outer-bottom
- *   
- *   {@link http://c3js.org/reference.html#data-x| c3js doc}
- * @param {String} axis-label Set the text for the label of the x axis.
- *
- *   {@link http://c3js.org/reference.html#axis-x-label| c3js doc}
- * @param {Number} padding-left Set padding on the left side of the x axis.
- * 
- *   {@link http://c3js.org/reference.html#axis-x-padding| c3js doc}
- * @param {Number} padding-right Set padding on the right side of the x axis.
- *
- *   {@link http://c3js.org/reference.html#axis-x-padding| c3js doc}
- * @param {Number} axis-height Set the overall height of the x axis, unit in pixels.
- *
- *   {@link http://c3js.org/reference.html#axis-x-height| c3js doc}
- * @param {Boolean} show Show or hide the x axis.
- *
- *   {@link http://c3js.org/reference.html#axis-x-show| c3js doc}
- * @param {String} axis-localtime Default is to use localtime, but can be set to false to use UTC.
- *
- *   {@link http://c3js.org/reference.html#axis-x-localtime| c3js doc}
- * @param {String} axis-min Min value of the x axis.
- *
- *   {@link http://c3js.org/reference.html#axis-x-min| c3js doc}
- *
- * @param {String} axis-max Max value of the x axis.
- *
- *   {@link http://c3js.org/reference.html#axis-x-max | c3js doc}
- *
- * @param {String} axis-type The type of the x-axis can be one of the following three: timeseries, category or indexed (default).
- *
- *   {@link http://c3js.org/reference.html#axis-x-type | c3js doc}
- *
- * @param {String} axis-x-format Specify format of x axis data, usefull when using timeseries.
- *
- *   {@link http://c3js.org/reference.html#data-xFormat | c3js doc}
- *
- * @example
- * Usage:
- *   <chart-axis-x axis-position="..." axis-label="..." padding-left="..." padding-right="..." .../>
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- *
- *   <chart-axis axis-rotate="true">
- *     <chart-axis-x axis-position="outer-center"
- *                   axis-label="The periods"
- *                   axis-type="category"/>
- *   </chart-axis>
- */
 
 function ChartAxisX () {
     var axisLinker = function (scope, element, attrs, chartCtrl) {
@@ -252,75 +130,6 @@ function ChartAxisX () {
 angular.module('gridshore.c3js.chart')
     .directive('chartAxisXTick', ChartAxisXTick);
 
-/**
- * @ngdoc directive
- * @name chartAxisXTick
- * @description
- *  `chart-axis-x-tick` is used to customize the x axis tick properties. You can change the amount of ticks, the format of the tick, culling, rotating.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   chart-axis-x
- *
- * @param {Number} tick-count Specify the number of ticks on the x axis.
- *   
- *   {@link http://c3js.org/reference.html#axis-x-tick-count| c3js doc}
- * @param {Boolean} tick-culling Culling means not all ticks will be shown, for category data this is by default false, for other data true.
- *
- *   {@link http://c3js.org/reference.html#axis-x-tick-culling| c3js doc}
- * @param {Number} tick-culling-max Set the maximum number of ticks, if specified culling is by default true.
- * 
- *   {@link http://c3js.org/reference.html#axis-x-tick-culling-max| c3js doc}
- * @param {Boolean} tick-multiline Not sure what this does, not documented.
- *
- *   {@link http://c3js.org/reference.html#axis-x-tick-multiline| c3js doc}
- * @param {Boolean} tick-centered Centers the tick on the x axis
- *
- *   {@link http://c3js.org/reference.html#axis-x-tick-centered| c3js doc}
- * @param {Number} tick-rotate Number of degrees to rotate the tick, can also be a negative number.
- *
- *   {@link http://c3js.org/reference.html#axis-x-tick-rotate| c3js doc}
- * @param {Boolean} tick-fit Default is to make the tick fit the chart, if false it will be at the exact position of the x value.
- *
- *   {@link http://c3js.org/reference.html#axis-x-tick-fit| c3js doc}
- *
- * @param {Boolean} tick-outer Default is not to show the outer tick, setting this to true will show the outer tick.
- *
- *   {@link http://c3js.org/reference.html#axis-x-tick-outer| c3js doc}
- *
- * @param {Array} tick-values An array containing the exact values to present a tick for.
- *
- *   {@link http://c3js.org/reference.html#axis-x-tick-values| c3js doc}
- *
- * @param {String} tick-format Provide a d3 based format for the tick value.
- *   format: '$,'
- *
- * @param {String} tick-format-time Provide a d3 based format for the tick value in case of timeseries data.
- *   format: '%Y-%m-%d %H:%M:%S'
- *
- *   {@link http://c3js.org/reference.html#data-xFormat| c3js doc}
- *
- * @param {Function} tick-format-function Provide a function to format the tick value.
- *   format: function (d) { return '$' + d; }
- *
- *   {@link http://c3js.org/reference.html#axis-x-tick-format| c3js doc}
- *
- * @example
- * Usage:
- *   <chart-axis-x-tick tick-rotate="..." tick-count="..."/>
- * 
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- *
- *   <chart-axis>
- *     <chart-axis-x axis-position="outer-center" axis-label="Number by 10"
- *                   axis-type="category">
- *       <chart-axis-x-tick tick-rotate="50"/>
- *     </chart-axis-x>
- *   </chart-axis>
- */
 function ChartAxisXTick() {
     var tickLinker = function (scope, element, attrs, chartCtrl) {
         var tick = {};
@@ -438,81 +247,6 @@ function ChartAxisXTick() {
 angular.module('gridshore.c3js.chart')
     .directive('chartAxisY', ChartAxisY);
 
-/**
- * @ngdoc directive
- * @name chartAxisY
- * @description
- *  `chart-axis-y` is used to customize the y and y2 axis properties. Using this directive you can padding, size, visibility of the axis.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   chart-axis
- *
- * @param {String} axis-id Default value is 'y' but you can also provide 'y2'
- *
- * @param {String} axis-position Location of the label. Can have following values:
- *
- *   - Horizontal: inner-right (default), inner-center, inner-left, outer-right, outer-center, outer-left 
- *   - Vertical: inner-top (default), inner-middle, inner-bottom, outer-top, outer-middle, outer-bottom
- *   
- *   {@link http://c3js.org/reference.html#data-y| c3js doc}
- * @param {String} axis-label Set the text for the label of the y or y2 axis.
- *
- *   {@link http://c3js.org/reference.html#axis-y-label| c3js doc}
- * @param {Number} padding-top Set padding on the top side of the y or y2 axis.
- * 
- *   {@link http://c3js.org/reference.html#axis-y-padding| c3js doc}
- * @param {Number} padding-bottom Set padding on the bottom side of the y or y2 axis.
- *
- *   {@link http://c3js.org/reference.html#axis-y-padding| c3js doc}
- * @param {Boolean} show Configure if the y or y2 axis should be shown.
- *
- *   {@link http://c3js.org/reference.html#axis-y-show| c3js doc}
- * @param {Number} axis-min Min value of the y our y2 axis in pixels.
- *
- *   {@link http://c3js.org/reference.html#axis-y-min| c3js doc}
- *
- * @param {Number} axis-max Max value of the y or y2 axis in pixels.
- *
- *   {@link http://c3js.org/reference.html#axis-y-max| c3js doc}
- *
- * @param {Boolean} axis-inner Position the y or y2 axis within the chart.
- *
- *   {@link http://c3js.org/reference.html#axis-y-inner| c3js doc}
- *
- * @param {Boolean} axis-inverted Invert the y or y2 axis, the default is true, from top to bottom.
- *
- *   {@link http://c3js.org/reference.html#axis-y-inverted| c3js doc}
- *
- * @param {Number} axis-center Set the center of the y or y2 axis, is a numeric value.
- *
- *   {@link http://c3js.org/reference.html#axis-y-center| c3js doc}
- *
- * @example
- * Usage:
- *   <chart-axis-y axis-position="..." axis-label="..." padding-top="..." padding-bottom="..." .../>
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- *
- *   <chart-axis>
- *     <chart-axis-y axis-id="y"
- *                 axis-position="outer-right"
- *                 axis-label="Higher numbers"
- *                 padding-top="100"
- *                 padding-bottom="0"
- *                 range-min="0"/>
- *     <chart-axis-y axis-id="y2"
- *                 axis-position="outer-right"
- *                 axis-label="Lower numbers"
- *                 padding-top="10"
- *                 padding-bottom="0"
- *                 range-max="100"
- *                 range-min="0"/>
- *  </chart-axis>
- */
-
 function ChartAxisY() {
     var axisLinker = function (scope, element, attrs, chartCtrl) {
         var id = attrs.axisId;
@@ -567,47 +301,6 @@ function ChartAxisY() {
 angular.module('gridshore.c3js.chart')
     .directive('chartAxisYTick', ChartAxisYTick);
 
-/**
- * @ngdoc directive
- * @name chartAxisYTick
- * @description
- *  `chart-axis-y-tick` is used to customize the y or y2 axis tick properties. You can change the amount of ticks, the format of the tick, culling, rotating.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   chart-axis-y
- *
- * @param {Number} tick-count Specify the number of ticks on the x axis.
- *
- *   {@link http://c3js.org/reference.html#axis-y-tick-count| c3js doc}
- *
- * @param {Boolean} tick-outer Default is not to show the outer tick, setting this to true will show the outer tick.
- *
- *   {@link http://c3js.org/reference.html#axis-y-tick-outer| c3js doc}
- *
- * @param {Array} tick-values An array containing the exact values to present a tick for.
- *
- *   {@link http://c3js.org/reference.html#axis-y-tick-values| c3js doc}
- *
- * @param {Function} tick-format Provide a d3 based format for the tick value.
- *   format: '$,'
- *
- *   {@link http://c3js.org/reference.html#axis-x-tick-format| c3js doc}
- *
- * @param {Function} tick-format-function Provide a function to format the tick value.
- *
- *   {@link http://c3js.org/reference.html#axis-y-tick-format| c3js doc}
- *
- * @example
- * Usage:
- *   <chart-axis-y-tick tick-outer="..." tick-count="..."/>
- *
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- *
- */
 function ChartAxisYTick() {
     var tickLinker = function (scope, element, attrs, chartCtrl) {
         var tick = {};
@@ -661,36 +354,6 @@ function ChartAxisYTick() {
 }
 angular.module('gridshore.c3js.chart')
     .directive('chartBar', ChartBar);
-/**
- * @ngdoc directive
- * @name chartBar
- * @description
- *  `chart-bar` is used to customize the axes properties. Using this directive you can select the propertie(s) to use for the different categories or for the time field. You can also configure for the different columns to use y or y2.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   c3chart
- *
- * @param {Number} width Fixed with of the bars in pixels
- *   
- *   {@link http://c3js.org/reference.html#bar-width| c3js doc}
- * 
- * @param {Number} ratio Change the width of the bar by ratio
- *
- *   {@link http://c3js.org/reference.html#bar-width-ratio| c3js doc}
- * @param {Boolean} zerobased Set if we start from zero, default is true.
- * 
- *   {@link http://c3js.org/reference.html#bar-zerobased| c3js doc}
- *
- * @example
- * Usage:
- *   <chart-bar width="..." ratio="..." zerobased="..."/>
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
- */
 
 function ChartBar() {
     var barLinker = function (scope, element, attrs, chartCtrl) {
@@ -723,133 +386,6 @@ angular.module('gridshore.c3js.chart')
         return C3Chart(timeout);
     }]);
 
-/**
- * @ngdoc directive
- * @name C3Chart
- * @description
- *   `c3chart` is the main directive to create the chart. Use it to set the padding properties and include the other directives. You can also register the callback in this directive that receives the initialised chart object.
- *
- *   When using multiple charts in the same page you need to provide unique bind-id parameters.
- * 
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   -
- *
- * @param {Number} padding-top Set the top padding of the chart.
- *   
- *   {@link http://c3js.org/reference.html#padding-top| c3js doc}
- * 
- * @param {Number} padding-bottom Set the bottom padding of the chart.
- *
- *   {@link http://c3js.org/reference.html#padding-bottom| c3js doc}
- *
- * @param {Number} padding-right Set the right padding of the chart.
- * 
- *   {@link http://c3js.org/reference.html#padding-right| c3js doc}
- *
- * @param {Number} padding-left Set the left padding of the chart.
- * 
- *   {@link http://c3js.org/reference.html#padding-left| c3js doc}
- *
- * @param {String} empty-label Set text displayed when empty data.
- *
- *   {@link http://c3js.org/reference.html#data-empty-label-text| c3js doc}
- *
- * @param {String} bind-id Id of the chart, needs to be unique when using multiple charts on one page.
- * 
- *   {@link http://c3js.org/reference.html#bindto| c3js doc}
- *
- * @param {String} sort-data You can enter three different versions: asc, desc, null. Using this sorting you can change the order of stacking and the order of the pieces of a pie or donut.
- * 
- *   {@link http://c3js.org/reference.html#data-order| c3js doc}
- *
- * @param {Boolean} show-labels Configure to show the labels 'true' or not, default is false.
- * 
- *   {@link http://c3js.org/reference.html#data-labels| c3js doc}
- *
- * @param {Function} labels-format-function Provide a function to format the labels.
- * 
- *   {@link http://c3js.org/reference.html#data-labels-format| c3js doc}
- *
- * @param {Boolean} show-subchart Configure to show the subchart or not (default).
- * 
- *   {@link http://c3js.org/reference.html#subchart-show| c3js doc}
- *
- * @param {Function} subchart-on-brush-function Use this if you want to do something after brush on subchart
- * 
- *   {@link http://c3js.org/reference.html#subchart-onbrush| c3js doc}
- *
- * @param {Boolean} enable-zoom Configure to enable zoom in the chart or not (defaut).
- * 
- *   {@link http://c3js.org/reference.html#zoom-enabled| c3js doc}
- *
- * @param {Function} on-zoom-end-function Use this if you want to do something after zooming
- * 
- *   {@link http://c3js.org/reference.html#zoom-onzoomend| c3js doc} 
- *
- * @param {Array} chart-data Provide a reference to a collection that can contain dynamic data. When providing this attrbiute you also need to provide the chart-columns attribute.
- * 
- *   Array consisting of objects with values for the different columns: [{"data1":10,"data2":20},{"data1":50,"data2":60}]
- *
- * @param {Array} chart-columns Provide a reference to a collection that contains the columns. When providing this attrbiute you also need to provide the chart-data attribute.
- * 
- *   Array consisting of objects with some properties for the different columns: [{"id": "data1", "type": "line"}, {"id": "data2", "type": "bar"}]
- *
- * @param {Object} chart-x Provide information about the x column. Used when adding dynamic data to specify the field that contains the x data value.
- * 
- *   Object containing reference to the id of the x data field: {"id": "x", "name": "My Data points"}
- *
- * @param {Function} callback-function Use this if you want to interact with the chart object using the api
- * 
- *   {@link http://c3js.org/reference.html#api-focus| c3js doc}
- *
- * @param {Number} transition-duration Duration of transition (in milliseconds) for chart animation. If you specify 0, transitions will be disabled which is good for large datasets.
- *
- *   {@link http://c3js.org/reference.html#transition-duration| c3js doc}
- *
- * @param {Object} initial-config Provide the initial config object to start the graph with.
- *
- * @example
- * Usage:
- *   <c3chart >
- *      <!-- sub elements -->
- *   </c3chart>
- * 
- * Example:
- *
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
- * Shows how to use dynamic data points.
- * 
- * <c3chart bindto-id="dynamicpie" chart-data="piePoints" chart-columns="pieColumns"/>
- * 
- *     $scope.piePoints = [{"data1": 70, "data2": 30, "data3": "100"}];
- *     $scope.pieColumns = [{"id": "data1", "type": "pie"}, {"id": "data2", "type": "pie"}, {
- *       "id": "data3",
- *       "type": "pie"
- *
- * Show how to register a callback function and use it. The screen contains a button to toggle the legend visibility.
- *
- * <c3chart bindto-id="dynamicpie" chart-data="piePoints" chart-columns="pieColumns"
- *        callback-function="handleCallback"/>
- *
- *     $scope.handleCallback = function (chartObj) {
- *       $scope.theChart = chartObj;
- *   };
- *
- *   $scope.legendIsShown = true;
- *   $scope.toggleLegend = function() {
- *       if ($scope.legendIsShown) {
- *           $scope.theChart.legend.hide();
- *       } else {
- *           $scope.theChart.legend.show();
- *       }
- *       $scope.legendIsShown= !$scope.legendIsShown;
- *       $scope.theChart.flush();
- *   };
- */
 function C3Chart ($timeout) {
     var chartLinker = function (scope, element, attrs, chartCtrl) {
         var paddingTop = attrs.paddingTop;
@@ -926,35 +462,6 @@ function C3Chart ($timeout) {
 angular.module('gridshore.c3js.chart')
     .directive('chartColors', ChartColors);
 
-/**
- * @ngdoc directive
- * @name chartColors
- * @description
- *  `chart-colors` is used to specify the colors to use in the chart. You can provide the colors or a function to determine the colors.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   c3chart
- *
- * @param {String} color-pattern A string containing comma separated hex colors
- * @param {String} thresholds A string containing comma separated numeric values
- *   
- * {@link http://c3js.org/reference.html#color-pattern| c3js docs}
- * @param {Function} color-function Provide a function that receives the value to determine a color for that value.
- *
- * {@link http://c3js.org/reference.html#data-color| c3js docs}
- *
- * @example
- * Usage:
- *   <chart-colors color-pattern="..." color-function="..." thresholds="..."/>
- * 
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
- *   
- */
 function ChartColors () {
     var colorsLinker = function (scope, element, attrs, chartCtrl) {
         var pattern = attrs.colorPattern;
@@ -986,48 +493,6 @@ function ChartColors () {
 angular.module('gridshore.c3js.chart')
     .directive('chartColumn', ChartColumn);
 
-/**
- * @ngdoc directive
- * @name chartColumn
- * @description
- *  `chart-column` Used to provide data values for the chart as well as the name and some other config options.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   c3chart
- *
- * @param {String} column-id The id used to uniquely identify the column
- *   
- * @param {String} column-values The values for this column to plot.
- *
- * @param {String} column-type The type of the column to show: line, spline, bar, step, area, area-spline, area-step, scatter, pie, donut, gauge
- *
- *   {@link http://c3js.org/reference.html#data-type| c3js docs}
- *
- * @param {String} column-name The name of the column as used to print in the label.
- *
- *   {@link http://c3js.org/reference.html#data-names| c3js docs}
- *
- * @param {String} column-color The color to use for this column.
- *
- *   {@link http://c3js.org/reference.html#data-names| c3js docs}
- *
- * @example
- * Usage:
- *   <chart-column column-values="..."/>
- * 
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
- * <chart-column column-id="data 1"
- *               column-name="Data 1"
- *               column-color="red"
- *               column-values="30,200,100,400,150,250"
- *               column-type="spline"/>  
- * 
- */
 function ChartColumn () {
     var columnLinker = function (scope, element, attrs, chartCtrl) {
         var column = attrs.columnValues.split(",");
@@ -1746,62 +1211,7 @@ function ChartController($scope, $timeout) {
 }
 angular.module('gridshore.c3js.chart')
     .directive('chartDonut', ChartDonut);
-/**
- * @ngdoc directive
- * @name chartDonut
- * @description
- *  `chart-donut` SPecific configuration options for creating a donut chart.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   c3chart
- *
- * @param {Boolean} show-label Show labels in the Donut.
- *
- *   {@link http://c3js.org/reference.html#donut-label-show| c3js docs}
- *   
- * @param {Number} threshold-label Set the threshold to show or hide labels.
- *
- *   {@link http://c3js.org/reference.html#donut-label-threshold| c3js docs}
- * 
- * @param {Boolean} expand Enable or disable whether to expand a pie part. True is the default.
- *
- *   {@link http://c3js.org/reference.html#donut-expand| c3js docs}
- *
- * @param {Number} width The width of the donut.
- *
- *   {@link http://c3js.org/reference.html#donut-width| c3js docs}
- *
- * @param {String} title The title for the donut chart.
- *
- *   {@link http://c3js.org/reference.html#donut-title| c3js docs}
- *
- * @param {Function} label-format-function Function to format the labels.
- *
- *   {@link http://c3js.org/reference.html#donut-label-format| c3js docs}
- *
- * @example
- * Usage:
- *   <chart-donut show-label="..." threshold-label="..." expand="..." width="..." title="..."/>
- * 
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
- * <c3chart bindto-id="donut-plot1-chart">
- *   <chart-column column-id="Data 1"
- *                 column-values="70"
- *                 column-type="donut"/>
- *   <chart-column column-id="Data 2"
- *                 column-values="35"
- *                 column-type="donut"/>
- *   <chart-column column-id="Data 3"
- *                 column-values="60"
- *                 column-type="donut"/>
- *   <chart-donut title="Donut" width="60"/>
- * </c3chart>
- */    
+
 function ChartDonut() {
     var donutLinker = function (scope, element, attrs, chartCtrl) {
         var donut = {};
@@ -1843,81 +1253,6 @@ function ChartDonut() {
 angular.module('gridshore.c3js.chart')
     .directive('chartEvents', ChartEvents);
 
-/**
- * @ngdoc directive
- * @name chartEvents
- * @description
- *  `chart-events` Used to provide callback functions to respond to events of the charts.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   c3chart
- *
- * @param {Function} on-init The on init callback function.
- *   
- *   {@link http://c3js.org/reference.html#oninit| c3js docs}
- *
- * @param {Function} on-rendered Provide the callback to respond to on-rendered. Basically, this callback will be called in each time when the chart is redrawed.
- *
- *   {@link http://c3js.org/reference.html#onrendered| c3js docs}
- *
- * @param {Function} on-mouseover Provide callback to be called when you hoover the chart.
- *
- *   {@link http://c3js.org/reference.html#onmouseover| c3js docs}
- *
- * @param {Function} on-mouseout Provide callback to be called when you hoover out of the chart.
- *
- *   {@link http://c3js.org/reference.html#onmouseout| c3js docs}
- *
- * @param {Function} on-resize Provide callback to be called when the chart is resizing.
- *
- *   {@link http://c3js.org/reference.html#onresize| c3js docs}
- *
- * @param {Function} on-resized Provide callback to be called when the chart is resized.
- *
- *   {@link http://c3js.org/reference.html#onresized| c3js docs}
- *
- * @param {Function} on-click-data Provide callback to be called one of the data points, lines, bars, etc. is clicked.
- *
- *   {@link http://c3js.org/reference.html#onclickdata| c3js docs}
- *
- * @param {Function} on-mouseover-data Provide callback to be called one of the data points, lines, bars, etc. is hoovered.
- *
- *   {@link http://c3js.org/reference.html#onclickdata| c3js docs}
- *
- * @param {Function} on-mouseout-data Provide callback to be called one of the data points, lines, bars, etc. is hoovered out.
- *
- *   {@link http://c3js.org/reference.html#onclickdata| c3js docs}
- *
- * @example
- * Usage:
- *   <chart-events on-init="..." on-rendered="..."/>
- * 
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
- *   <c3chart bindto-id="donut-plot1-chart">
- *     <chart-column column-id="Data 1"
- *                   column-values="70"
- *                   column-type="donut"/>
- *     <chart-column column-id="Data 2"
- *                   column-values="35"
- *                   column-type="donut"/>
- *     <chart-column column-id="Data 3"
- *                   column-values="60"
- *                   column-type="donut"/>
- *     <chart-donut title="Donut" width="60"/>
- *     <chart-events on-click-data="showClick(data)"/>
- *   </c3chart>
- *
- *   graphApp.controller('GraphCtrl', function ($scope) {
- *     $scope.clicked = {};
- *     $scope.showClick = function(data) {
- *     $scope.clicked = data;
- *   }
- */
 function ChartEvents() {
     var eventsLinker = function (scope, element, attrs, chartCtrl) {
         if (attrs.onInit) {
@@ -1970,55 +1305,7 @@ function ChartEvents() {
 
 angular.module('gridshore.c3js.chart')
     .directive('chartGauge', ChartGauge);
-/**
- * @ngdoc directive
- * @name chartGauge
- * @description
- *  `chart-gauge` is used to specify specific properties when creating a guage chart.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   c3chart
- *
- * @param {Number} min The minimum value used in the Gauge.
- *   
- *   {@link http://c3js.org/reference.html#gauge-min| c3js docs}
- *
- * @param {Number} max The maximum value used in the Guage.
- *
- *   {@link http://c3js.org/reference.html#gauge-max| c3js docs}
- *
- * @param {Number} width The width of the Guage.
- *
- *   {@link http://c3js.org/reference.html#gauge-width| c3js docs}
- *
- * @param {String} units Set the units of the gauge, ' %' for instance.
- *
- *   {@link http://c3js.org/reference.html#gauge-units| c3js docs}
- *
- * @param {Boolean} show-label Set to false to hide the labels, default is true.
- *
- *   {@link http://c3js.org/reference.html#gauge-label-show| c3js docs}
- *
- * @param {Boolean} expand Set to false to prevent expanding the gauge, default is true.
- *
- *   {@link http://c3js.org/reference.html#gauge-expand| c3js docs}
- *
- * @param {Function} label-format-function Function to format the labels.
- *
- *   {@link http://c3js.org/reference.html#gauge-label-format| c3js docs}
- *
- * @example
- * Usage:
- *   <chart-gauge min="..." max="..."/>
- * 
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
- *   
- */
+
 function ChartGauge () {
     var gaugeLinker = function (scope, element, attrs, chartCtrl) {
         var gauge = {};
@@ -2060,47 +1347,6 @@ function ChartGauge () {
 angular.module('gridshore.c3js.chart')
     .directive('chartGrid', ChartGrid);
 
-/**
- * @ngdoc directive
- * @name chartGrid
- * @description
- *  `chart-grid` is used to specify properties to show a grid.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   c3chart
- *
- * @param {Boolean} showX Whether to show the x axis grid.
- *   
- *   {@link http://c3js.org/reference.html#grid-x-show| c3js docs}
- *
- * @param {Boolean} showY Whether to show the y axis grid.
- *
- *   {@link http://c3js.org/reference.html#grid-y-show| c3js docs}
- *
- * @param {Boolean} showY2 Whether to show the y2 axis grid.
- *
- *   {@link http://c3js.org/reference.html#grid-y-show| c3js docs}
- *
- * @param {Boolean} showFocus Whether to enable the focus grid.
- *
- *   {@link http://c3js.org/reference.html#grid-focus-show| c3js docs}
- *
- * @example
- * Usage:
- *   <chart-grid showX="..." showY="..." showY2="..."/>
- * 
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
- * <chart-grid show-x="false" show-y="true">
- *   <chart-grid-optional axis-id="x" grid-value="1" grid-text="Start"/>
- *   <chart-grid-optional axis-id="y" grid-value="20" grid-text="Minimum"/>
- *   <chart-grid-optional axis-id="y" grid-value="200" grid-text="Maximum"/>
- * </chart-grid>  
- */
 function ChartGrid () {
     var gridLinker = function (scope, element, attrs, chartCtrl) {
         var showX = attrs.showX;
@@ -2133,51 +1379,7 @@ function ChartGrid () {
 }
 angular.module('gridshore.c3js.chart')
     .directive('chartGridOptional', ChartGridOptional);
-/**
- * @ngdoc directive
- * @name chartGridOptional
- * @description
- *  `chart-grid-optional` is used to add optional grid lines to the chart. All attributes are mandatory
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   gridDirective
- *
- * @param {String} axisId x, y or y2.
- *   
- *   {@link http://c3js.org/reference.html#grid-x-lines| c3js docs}
- *
- * @param {Number} value Value where to print the additional grid line.
- *
- *   {@link http://c3js.org/reference.html#grid-x-lines| c3js docs}
- *
- * @param {String} text Label to print at the grid line.
- *
- *   {@link http://c3js.org/reference.html#grid-x-lines| c3js docs}
- *
- * @param {String} gridClass Class to add to the grid line to be able to style them separately.
- *
- *   {@link http://c3js.org/reference.html#grid-x-lines| c3js docs}
- *
- * @param {String} position Sets the position for the label, values are: start, middle, end.
- *
- *   {@link http://c3js.org/reference.html#grid-x-lines| c3js docs}
- *
- * @example
- * Usage:
- *   <chart-grid-optional axis-id="..." value="..." text="..."/>
- * 
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
- * <chart-grid show-x="false" show-y="true">
- *   <chart-grid-optional axis-id="x" grid-value="1" grid-text="Start"/>
- *   <chart-grid-optional axis-id="y" grid-value="20" grid-text="Minimum"/>
- *   <chart-grid-optional axis-id="y" grid-value="200" grid-text="Maximum"/>
- * </chart-grid>  
- */
+
 function ChartGridOptional() {
     var gridLinker = function (scope, element, attrs, chartCtrl) {
         var axisId = attrs.axisId;
@@ -2201,46 +1403,6 @@ function ChartGridOptional() {
 angular.module('gridshore.c3js.chart')
     .directive('chartGroup', ChartGroup);
 
-/**
- * @ngdoc directive
- * @name chartGroup
- * @description
- *  `chart-group` is used to group columns, for instance to add them to the 
- * same column for the same x value. Input is a comma separated string with the
- * id's of the columns to group.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   c3chart
- *
- * @param {String} groupValues Comma separated column ids.
- *   
- *   {@link http://c3js.org/reference.html#data-groups| c3js docs}
- *
- *
- * @example
- * Usage:
- *   <chart-group group-values="..."/>
- * 
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
- * <c3chart bindto-id="stacked-bar-plot1-chart">
- *   <chart-column column-id="data 1"
- *             column-name="Data 1"
- *             column-color="red"
- *             column-values="30,200,100,400,150,250"
- *             column-type="bar"/>
- *   <chart-column column-id="data 2"
- *             column-name="Data 2"
- *             column-color="green"
- *             column-values="50,20,10,40,15,25"
- *             column-type="bar"/>
- *   <chart-group group-values="data 1,data 2"/>
- * </c3chart>  
- */
 function ChartGroup () {
     var groupLinker = function (scope, element, attrs, chartCtrl) {
         var group = attrs.groupValues.split(",");
@@ -2259,64 +1421,6 @@ function ChartGroup () {
 angular.module('gridshore.c3js.chart')
     .directive('chartLegend', ChartLegend);
 
-/**
- * @ngdoc directive
- * @name chartLegend
- * @description
- *  `chart-legend` is used configure the legend to add to the chart. You can also add function to handle events related
- *  to the legend: onClick, onMouseOver and onMouseOut.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   c3chart
- *
- * @param {Boolean} showLegend Whether to show the legend or not, default is show.
- *
- *   {@link http://c3js.org/reference.html#legend-show| c3js docs}
- *
- * @param {String} legendPosition One of the following values: bottom, right, inset.
- *
- *   {@link http://c3js.org/reference.html#legend-position| c3js docs}
- *
- * @param {Function} onMouseover Provide callback to be called when you hoover the legend.
- *
- *   {@link http://c3js.org/reference.html#legend-item-onmouseover| c3js docs}
- *
- * @param {Function} onMouseout Provide callback to be called when you hoover out of the legend.
- *
- *   {@link http://c3js.org/reference.html#legend-item-onmouseout| c3js docs}
- *
- * @param {Function} onClick Provide callback to be called when you click the legend.
- *
- *   {@link http://c3js.org/reference.html#legend-item-onmouseout| c3js docs}
- *
- * @param {String} legendInset Where to show an inset legend, valid values are: top-left, top-right, bottom-left, bottom-right
- *
- *   {@link http://c3js.org/reference.html#legend-inset| c3js docs}
- *
- * @param {Number} legendInsetX X position for the inset.
- *
- *   {@link http://c3js.org/reference.html#legend-inset| c3js docs}
- *
- * @param {Number} legendInsetY Y position for the inset.
- *
- *   {@link http://c3js.org/reference.html#legend-inset| c3js docs}
- *
- * @param {Number} legendInsetStep Step for the inset.
- *
- *   {@link http://c3js.org/reference.html#legend-inset| c3js docs}
- *
- * @example
- * Usage:
- *   <chart-legend show-legend="..." legend-position="..." on-click="..."/>
- * 
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
- * <chart-legend show-legend="true" legend-position="right"/>
- */
 function ChartLegend () {
     var legendLinker = function (scope, element, attrs, chartCtrl) {
         var legend = null;
@@ -2395,33 +1499,6 @@ function ChartLegend () {
 }
 angular.module('gridshore.c3js.chart')
     .directive('chartLine', ChartLine);
-/**
- * @ngdoc directive
- * @name chartLine
- * @description
- *  `chart-line` is used to customize the line chart properties..
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   c3chart
- *
- * @param {String} stepType Step types for step chart: step, step-before and step-after.
- *
- *   {@link http://c3js.org/reference.html#line-step_type| c3js doc}
- *
- * @param {Boolean} connectNull Should null data point be connected or not.
- *
- *   {@link http://c3js.org/reference.html#bar-width-ratio| c3js doc}
- *
- * @example
- * Usage:
- *   <chart-line step-type="..." connect-null="..."/>
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- *
- */
 
 function ChartLine() {
     var lineLinker = function (scope, element, attrs, chartCtrl) {
@@ -2449,48 +1526,6 @@ function ChartLine() {
 angular.module('gridshore.c3js.chart')
     .directive('chartPie', ChartPie);
 
-/**
- * @ngdoc directive
- * @name chartPie
- * @description
- *  `chart-pie` is used configure additional properties for a pie chart.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   c3chart
- *
- * @param {Boolean} showLabel Whether to show a label for each pie part.
- *   
- *   {@link http://c3js.org/reference.html#pie-label-show| c3js docs}
- *
- * @param {Boolean} expand Whether to expand on mouse over.
- *   
- *   {@link http://c3js.org/reference.html#pie-expand| c3js docs}
- *
- * @param {Number} thresholdLabel Show label if value is higher than the provided value.
- *
- *   {@link http://c3js.org/reference.html#pie-label-threshold| c3js docs}
- *
- * @param {Function} labelFormatFunction Present a function to format the label.
- *
- *   {@link http://c3js.org/reference.html#pie-label-format| c3js docs}
- *
- * @example
- * Usage:
- *   <chart-pie show-label="..." expand="..."/>
- * 
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
- * <c3chart bindto-id="pie-plot1-chart">
- *   <chart-column column-id="Data 1" column-values="70" column-type="pie"/>
- *   <chart-column column-id="Data 2" column-values="35" column-type="pie"/>
- *   <chart-column column-id="Data 3" column-values="60" column-type="pie"/>
- *   <chart-pie expand="true"/>
- * </c3chart>
- */
 function ChartPie () {
     var pieLinker = function (scope, element, attrs, chartCtrl) {
         var pie = {};
@@ -2526,48 +1561,6 @@ function ChartPie () {
 angular.module('gridshore.c3js.chart')
     .directive('chartPoints', ChartPoints);
 
-/**
- * @ngdoc directive
- * @name chartPoints
- * @description
- *  `chart-points` is used configure the points in for example a line chart. You can
- * configure the radius of the point in normal as well as expand state.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   c3chart
- *
- * @param {Boolean} showPoint Whether to show points in the chart.
- *   
- *   {@link http://c3js.org/reference.html#point-show| c3js docs}
- *
- * @param {Boolean} pointExpandEnabled Whether to expand on mouse over.
- *   
- *   {@link http://c3js.org/reference.html#point-focus-expand-enabled| c3js docs}
- *
- * @param {Number} pointExpandRadius Radius of the point when expanded. Default is 1.75 times the 
- * normal radius.
- *
- *   {@link http://c3js.org/reference.html#point-focus-expand-r| c3js docs}
- *
- * @param {Number} pointRadius Radius of the point in normal mode. Default radius is 2.5
- *
- *   {@link http://c3js.org/reference.html#point-r| c3js docs}
- *
- * @param {Number} pointSelectRadius Radius of the point when selected, default is 4 times the normal radius.
- *
- *   {@link http://c3js.org/reference.html#point-select-r| c3js docs}
- *
- * @example
- * Usage:
- *   <chart-points show-point="..." point-expand-enabled="..."/>
- * 
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
- */
 function ChartPoints () {
     var pointLinker = function (scope, element, attrs, chartCtrl) {
         var point = {};
@@ -2605,35 +1598,6 @@ function ChartPoints () {
 }
 angular.module('gridshore.c3js.chart')
     .directive('chartRegion', ChartRegion);
-/**
- * @ngdoc directive
- * @name chartRegion
- * @description
- *  `chart-region` is used to set a region property on a chart.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   c3chart
- *
- * @param {String} region-id The id used to uniquely identify the column
- *
- * @param {String} region-style Style to identify the regions.
- *
- *   {@link http://c3js.org/reference.html#data-regions| c3js doc}
- *
- * @param {String} region-starts The regions where the data starts.
- *
- * @param {String} region-ends The regions where the data starts.
- *
- * @example
- * Usage:
- *   <chart-region region-id="..." region-style="..." region-starts="..." region-ends="..."/>
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- *
- */
 
 function ChartRegion() {
     var regionLinker = function (scope, element, attrs, chartCtrl) {
@@ -2673,36 +1637,7 @@ function ChartRegion() {
 
 angular.module('gridshore.c3js.chart')
     .directive('selection', Selection);
-/**
- * @ngdoc directive
- * @name selection
- * @description
- *  `selection` is used to to configure whether it is possible to select elements and interact with the chart to find selected elements.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   c3chart
- *
- * @param {String} enabled Specify whether the selection should be enabled or not, default is true.
- *
- *   {@link http://c3js.org/reference.html#data-selection-enabled}
- *
- * @param {String} grouped Enables the grouped selection.
- *
- *   {@link http://c3js.org/reference.html#data-selection-grouped}
- *
- * @param {String} multiple Enables possibility to select multiple items.
- *
- *   {@link http://c3js.org/reference.html#data-selection-multiple}
- *
- * @example
- * Usage:
- *   <selection enabled="true"/>
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- */
+
 function Selection () {
     var selectionLinker = function (scope, element, attrs, chartCtrl) {
         var enabled = attrs.enabled;
@@ -2733,37 +1668,6 @@ function Selection () {
 angular.module('gridshore.c3js.chart')
     .directive('chartSize', ChartSize);
 
-/**
- * @ngdoc directive
- * @name chartSize
- * @description
- *  `chart-size` is used to configure size properties of the chart.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   c3chart
- *
- * @param {Number} chartWidth Width of the chart element, by default it will be 
- * calculated from the parent container.
- *   
- *   {@link http://c3js.org/reference.html#size-width| c3js docs}
- *
- * @param {Number} chartHeight Height of the chart element, by default it will be 
- * calculated from the parent container.
- *   
- *   {@link http://c3js.org/reference.html#size-height| c3js docs}
- *
- * @example
- * Usage:
- *   <chart-size chart-height="..." chart-width="..."/>
- * 
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
- * <chart-size chart-height="600" chart-width="600"/>
- */
 function ChartSize() {
     var sizeLinker = function (scope, element, attrs, chartCtrl) {
         var chartSize = null;
@@ -2793,65 +1697,6 @@ function ChartSize() {
 angular.module('gridshore.c3js.chart')
     .directive('chartTooltip', ChartTooltip);
 
-/**
- * @ngdoc directive
- * @name chartTooltip
- * @description
- *  `chart-tooltip` is used to configure the look and feel of the tooltip. You can
- * configure to show the tooltip or not and the formatting of labels, values, etc.
- *
- * Restrict To:
- *   Element
- *
- * Parent Element:
- *   c3chart
- *
- * @param {Boolean} showTooltip Whether to show the tooltip or not.
- *   
- *   {@link http://c3js.org/reference.html#tooltip-show| c3js docs}
- *
- * @param {Boolean} hideTooltipTitle Whether to show the tooltip title or not.
- *   
- * @param {Boolean} groupTooltip Whether to group all tooltips of the different 
- * columns in the chart.
- *   
- *   {@link http://c3js.org/reference.html#tooltip-grouped| c3js docs}
- *
- * @param {Function} titleFormatFunction Function to format the title of the tooltip.
- *   
- *   {@link http://c3js.org/reference.html#tooltip-format-title| c3js docs}
- *
- * @param {Function} nameFormatFunction Function to format the name of the tooltip.
- *   
- *   {@link http://c3js.org/reference.html#tooltip-format-name| c3js docs}
- *
- * @param {Function} valueFormatFunction Function to format the value of the tooltip.
- *   
- *   {@link http://c3js.org/reference.html#tooltip-format-value| c3js docs}
- *
- * @param {Function} contentFormatFunction Function to format the content of the tooltip.
- *
- *   {@link http://c3js.org/reference.html#tooltip-contents| c3js docs}
- *
- * @example
- * Usage:
- *   <chart-tooltip show-tooltip="..." value-format-function="..."/>
- * 
- * Example:
- *   {@link http://jettro.github.io/c3-angular-directive/#examples}
- * 
- * <chart-tooltip show-tooltip="true" value-format-function="vm.formatTooltip"/>
- *
- * function Ctrl() {
- *   var vm = this;
- *   vm.formatTooltip = formatTooltip;
- *
- *   function formatTooltip(value, ratio, id, index) {
- *       return '$' + value;
- *   }
- * }
- *
- */
 function ChartTooltip () {
     var tooltipLinker = function (scope, element, attrs, chartCtrl) {
         var tooltip = null;
