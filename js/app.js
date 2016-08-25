@@ -45,4 +45,9 @@ app.config(function($routeProvider){
             templateUrl: 'js/views/graph.html',
             controller: 'graphCtrl'
         })
+
+        .when('/dashboard', {
+            templateUrl: 'js/views/dashboard.html',
+            controller: 'userCtrl'
+        })
 });
