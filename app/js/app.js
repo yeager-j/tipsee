@@ -1,7 +1,7 @@
 /**
  * Created by Jackson on 8/17/16.
  */
-app = angular.module('tipsee', ['ngRoute', 'ngCookies','mwl.calendar', 'ngAnimate', 'ui.bootstrap', 'colorpicker.module', 'gridshore.c3js.chart']);
+app = angular.module('tipsee', ['ngRoute', 'ngCookies','mwl.calendar', 'ngAnimate', 'ui.bootstrap', 'colorpicker.module', 'angular-c3-simple']);
 
 app.config(function($routeProvider){
     $routeProvider
