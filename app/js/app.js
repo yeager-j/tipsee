@@ -1,15 +1,12 @@
 /**
  * Created by Jackson on 8/17/16.
  */
-app = angular.module('tipsee', ['ngRoute', 'ngCookies','mwl.calendar', 'ngAnimate', 'ui.bootstrap', 'colorpicker.module', 'gridshore.c3js.chart']);
+ // Establish the master app module
+app = angular.module('tipsee', ['ngRoute', 'ngCookies','mwl.calendar', 'ngAnimate', 'ui.bootstrap', 'colorpicker.module', 'angular-c3-simple']);
 
+// Setting our views in our route
 app.config(function($routeProvider){
     $routeProvider
-        .when('/', {
-            templateUrl: 'js/views/home.html',
-            controller: 'homeCtrl'
-        })
-
         .when('/schedule', {
             templateUrl: 'js/views/schedule.html',
             controller: 'scheduleCtrl'
@@ -25,13 +22,33 @@ app.config(function($routeProvider){
             controller: 'dataViewCtrl'
         })
 
+        .when('/data/:person/add', {
+            templateUrl: 'js/views/add-entry.html',
+            controller: 'addEntryCtrl'
+        })
+
         .when('/login', {
             templateUrl: 'js/views/login.html',
             controller: 'loginCtrl'
         })
 
+        .when ('/mastersched',{
+            templateUrl: 'js/views/master-sched.html',
+            controller: 'masterSchedCtrl'
+
+        })
+
         .when('/graph', {
             templateUrl: 'js/views/graph.html',
             controller: 'graphCtrl'
+        })
+
+        .when('/dashboard', {
+            templateUrl: 'js/views/dashboard.html',
+            controller: 'userCtrl'
+        })
+
+        .otherwise({
+            redirectTo: '/login'
         })
 });

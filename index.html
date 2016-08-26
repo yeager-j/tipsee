@@ -1,184 +1,179 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="tipsee">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Tipsee App</title>
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Candal|Titillium+Web" rel="stylesheet">
-
-    <link href="css/material-kit.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/login.css" rel="stylesheet">
-
-
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/angular-bootstrap-colorpicker/3.0.25/css/colorpicker.min.css" rel="stylesheet">
-    <link href="//mattlewis92.github.io/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet">
-    
-    <!-- Load c3.css -->
-    <link href="css/c3.css" rel="stylesheet" type="text/css">
+    <title>BusBoy</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,100,300' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/0275cb1589.js"></script>
+    <link href="css/volition.css" rel="stylesheet">
+    <link href="css/portfolio.css" rel="stylesheet">
 </head>
-<body ng-controller="mainCtrl">
 
-<nav class="navbar navbar-fixed-top navbar-color-on-scroll navbar-info" ng-class="{'navbar-transparent': isActive('')}">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#/">
-                Tipsee
-            </a>
-        </div>
+<body data-spy="scroll" data-target=".navbar" data-offset="10">
 
-        <div class="collapse navbar-collapse" id="navigation-index" ng-controller="loginCtrl">
+<div class="cover"></div>
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header"> <a class="navbar-brand" href="#">BusBoy</a> </div>
             <ul class="nav navbar-nav navbar-right">
-                <li ng-class="{active: isActive('')}">
-                    <a href="#/">
-                        <i class="fa fa-home"></i> Home
-                    </a>
-                </li>
-                <li ng-class="{active: isActive('data')}">
-                    <a href="#/data" ng-if="isLoggedIn()">
-                        <i class="fa fa-dashboard"></i> Data
-                    </a>
-                </li>
-                <li ng-class="{active: isActive('schedule')}">
-                    <a href="#/schedule" ng-if="isLoggedIn()">
-                        <i class="fa fa-calendar"></i> Schedule
-                    </a>
-                </li>
-                <li ng-class="{active: isActive('login')}">
-                    <a href="#/" ng-click="logOut()" ng-if="isLoggedIn()">
-                        <i class="fa fa-remove"></i> Log Out
-                    </a>
-
-                    <a href="#/login" ng-if="!isLoggedIn()">
-                        <i class="fa fa-users"></i> Log In
-                    </a>
-                </li>
-                <p class="navbar-text" ng-if="isLoggedIn()">Welcome, {{currentUser}}!</p>
+                <li><a href="#top">Home</a></li>
+                <li><a href="#whatdo">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#numbers">Numbers</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
+    </nav>
+
+    <div class="homepage-hero-module">
+        <div class="video-container">
+            <div class="filter"></div>
+            <video autoplay loop class="fillWidth">
+                <source src="img/Coffee-Shot.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+                <source src="PATH_TO_WEBM" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            </video>
+            <div class="poster hidden">
+                <img src="img/background.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="top" id="top">
+            <div class="top-wrapper">
+                <h1>BusBoy</h1>
+                <div class="separator">
+                    <div class="line"></div>
+                    <h2>&diams;</h2>
+                    <div class="line"></div>
+                </div>
+                <p>Cleaning up the restaurant service industry</p>
+                <a href="app" class="btn btn-success btn-lg ">Get Started!</a>
+            </div>
+            <h2 class="arrow"><a href="#whatdo" class="glyphicon glyphicon-chevron-down"></a></h2>
+        </div>
     </div>
-</nav>
 
-<div ng-view></div>
+    <div class="excerpt excerpt-white" id="whatdo">
+        <div class="excerpt-wrapper">
+            <h2>About</h2>
+            <div class="separator">
+                <div class="line"></div>
+                <h3>&diams;</h3>
+                <div class="line"></div>
+            </div>
+            <p>...</p>
+        </div>
+    </div>
+    <div class="spacer-md">
+        <div class="triangle"></div>
+    </div>
+    <div class="excerpt excerpt-white" id="features">
+        <div class="excerpt-wrapper">
+            <h2>Features</h2>
+            <div class="separator">
+                <div class="line"></div>
+                <h3>&diams;</h3>
+                <div class="line"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h2><i class="fa fa-dollar" aria-hidden="true"></i></h2>
+                    <h3>Tip Management</h3>
+                    <p class="lead">Keep track of the tips you've earned through our dashboard</p>
+                </div>
+                <div class="col-md-4">
+                    <h2><i class="fa fa-calendar" aria-hidden="true"></i></h2>
+                    <h3>Manage Your Schedule</h3>
+                    <p class="lead">Keep track of your work days with our innovative scheduling system</p>
+                </div>
+                <div class="col-md-4">
+                    <h2><i class="fa fa-area-chart" aria-hidden="true"></i></h2>
+                    <h3>Graphical Overview</h3>
+                    <p class="lead">Take a hard look at your earnings over time with our graphing feature</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="excerpt excerpt-clear" id="numbers">
+        <div class="triangle"></div>
+        <div class="excerpt-wrapper">
+            <h2>Numbers</h2>
+            <div class="separator">
+                <div class="line"></div>
+                <h3>&diams;</h3>
+                <div class="line"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="light">Customers Served</h3>
+                    <h2 class="number">1000+</h2> </div>
+                <div class="col-md-4">
+                    <h3 class="light">Tips Recorded</h3>
+                    <h2 class="number">$2,846,560</h2> </div>
+                <div class="col-md-4">
+                    <h3 class="light">Satisfaction</h3>
+                    <h2 class="number">100%</h2> </div>
+            </div>
+        </div>
+    </div>
+    <div class="excerpt excerpt-white" id="clients">
+        <div class="excerpt-wrapper">
+            <h2>Clients</h2>
+            <div class="separator">
+                <div class="line"></div>
+                <h3>&diams;</h3>
+                <div class="line"></div>
+            </div>
+            <div class="row skills">
+                <div class="col-md-3">
+                    <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAQbAAAAJDJlZjIwNGVlLTY3NjUtNDkxMi1hNTJhLWRiZjIwYzk3YTQ3NQ.png" class="dev-logo">
+                </div>
+                <div class="col-md-3">
+                    <img src="http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/0023/3376/brand.gif?itok=8NXCym9n" class="dev-logo">
+                </div>
+                <div class="col-md-3">
+                    <img src="http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/0013/7567/brand.gif?itok=ehjYqEGX" class="dev-logo">
+                </div>
+                <div class="col-md-3">
+                    <img src="http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/032011/tgifridays.png?itok=AHG7EBKL" class="dev-logo">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="excerpt excerpt-grey" id="contact">
+        <div class="triangle"></div>
+        <div class="excerpt-wrapper">
+            <h2 class="text-center">Sign Up!</h2>
+            <div class="separator">
+                <div class="line"></div>
+                <h3>&diams;</h3>
+                <div class="line"></div>
+            </div>
+            <p class="lead">Convinced?</p>
 
-<!--Dependencies-->
-<script src="node_modules/angular/angular.min.js"></script>
-<script src="node_modules/angular-route/angular-route.min.js"></script>
-<script src="node_modules/angular-cookies/angular-cookies.min.js"></script>
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="js/material-kit.js"></script>
-<script src="js/nouislider.min.js"></script>
-<script src="js/bootstrap-datepicker.js"></script>
+            <a href="app" class="btn btn-primary btn-lg btn-block">Sign Up Now</a>
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li><a href="">Resume</a></li>
+            <li><a href="">Pricing</a></li>
+            <li><a href="https://github.com/VolitionDevelopment">Github</a></li>
+            <li><a href="theme/index.html">Get Theme</a></li>
+        </ul>
+        <ul class="right">
+            <li>&copy; 2016 Volition Development</li>
+        </ul>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/jquery.mixitup.js"></script>
+<script src="js/volition.js"></script>
+<script src="js/portfolio.js"></script>
 
-<!-- d3.js and c3.js -->
-<script src="js/graph/d3-3.4.11.min.js" charset="utf-8"></script>
-<script src="js/graph/c3-0.2.4.min.js"></script>
-<script src="js/graph/c3js-directive.js"></script>
 
-
-
-<!-- CALENDAR -->
-     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
-     <script src="//cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.4/interact.min.js"></script>
-     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.0/ui-bootstrap-tpls.min.js"></script>
-     <script src="//cdn.rawgit.com/jkbrzt/rrule/v2.1.0/lib/rrule.js"></script>
-     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
-     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-bootstrap-colorpicker/3.0.25/js/bootstrap-colorpicker-module.min.js"></script>
-     <script src="//mattlewis92.github.io/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script>
-
-<!--Main App-->
-<script src="js/app.js"></script>
-
-<!--Controllers-->
-<script src="js/controllers/main-controller.js"></script>
-<script src="js/controllers/data-controller.js"></script>
-<script src="js/controllers/data-view-controller.js"></script>
-<script src="js/controllers/home-controller.js"></script>
-<script src="js/controllers/schedule-controller.js"></script>
-<script src="js/controllers/login-controller.js"></script>
-<script src="js/controllers/graph-controller.js"></script>
-
-<!-- Directives -->
-<!-- <script src="js/directives/graphDirective.js"></script> -->
-
-<!--Data-->
-<script src="js/data/data.js"></script>
-
-<!-- D3 Service Module -->
-<script src="services/d3.js"></script>
-
-<script>
-    //jQuery is required to run this code
-    $( document ).ready(function() {
-
-        scaleVideoContainer();
-
-        initBannerVideoSize('.video-container .poster img');
-        initBannerVideoSize('.video-container .filter');
-        initBannerVideoSize('.video-container video');
-
-        $(window).on('resize', function() {
-            scaleVideoContainer();
-            scaleBannerVideoSize('.video-container .poster img');
-            scaleBannerVideoSize('.video-container .filter');
-            scaleBannerVideoSize('.video-container video');
-        });
-
-    });
-
-    function scaleVideoContainer() {
-
-        var height = $(window).height() + 5;
-        var unitHeight = parseInt(height) + 'px';
-        $('.homepage-hero-module').css('height',unitHeight);
-
-    }
-
-    function initBannerVideoSize(element){
-
-        $(element).each(function(){
-            $(this).data('height', $(this).height());
-            $(this).data('width', $(this).width());
-        });
-
-        scaleBannerVideoSize(element);
-
-    }
-
-    function scaleBannerVideoSize(element){
-
-        var windowWidth = $(window).width(),
-                windowHeight = $(window).height() + 5,
-                videoWidth,
-                videoHeight;
-
-        $(element).each(function(){
-            var videoAspectRatio = $(this).data('height')/$(this).data('width');
-
-            $(this).width(windowWidth);
-
-            if(windowWidth < 1000){
-                videoHeight = windowHeight;
-                videoWidth = videoHeight / videoAspectRatio;
-                $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
-
-                $(this).width(videoWidth).height(videoHeight);
-            }
-
-            $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
-
-        });
-    }
-</script>
 </body>
 </html>
