@@ -31,7 +31,7 @@ app.controller('scheduleCtrl', function(moment, alert, calendarConfig){
  
 //adds event
     vm.addEvent = function() {
-     
+     console.log('here')
       vm.events.push({
         title: 'New event',
         info:'Info',
