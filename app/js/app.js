@@ -7,11 +7,6 @@ app = angular.module('tipsee', ['ngRoute', 'ngCookies','mwl.calendar', 'ngAnimat
 // Setting our views in our route
 app.config(function($routeProvider){
     $routeProvider
-        .when('/', {
-            templateUrl: 'js/views/home.html',
-            controller: 'homeCtrl'
-        })
-
         .when('/schedule', {
             templateUrl: 'js/views/schedule.html',
             controller: 'scheduleCtrl'
@@ -52,4 +47,12 @@ app.config(function($routeProvider){
             templateUrl: 'js/views/dashboard.html',
             controller: 'userCtrl'
         })
+<<<<<<< HEAD
 });
+=======
+
+        .otherwise({
+            redirectTo: '/login'
+        })
+});
+>>>>>>> develop

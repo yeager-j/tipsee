@@ -1,12 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Busboy</title>
+    <title>BusBoy</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,100,300' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/0275cb1589.js"></script>
+    <link href="css/volition.css" rel="stylesheet">
+    <link href="css/portfolio.css" rel="stylesheet">
 </head>
-<body>
 
-Landing Page
+<body data-spy="scroll" data-target=".navbar" data-offset="10">
+
+<div class="cover"></div>
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header"> <a class="navbar-brand" href="#">BusBoy</a> </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#top">Home</a></li>
+                <li><a href="#whatdo">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#numbers">Numbers</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="homepage-hero-module">
+        <div class="video-container">
+            <div class="filter"></div>
+            <video autoplay loop class="fillWidth">
+                <source src="img/Coffee-Shot.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+                <source src="PATH_TO_WEBM" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            </video>
+            <div class="poster hidden">
+                <img src="img/background.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="top" id="top">
+            <div class="top-wrapper">
+                <h1>BusBoy</h1>
+                <div class="separator">
+                    <div class="line"></div>
+                    <h2>&diams;</h2>
+                    <div class="line"></div>
+                </div>
+                <p>Cleaning up the restaurant service industry</p>
+                <a href="app" class="btn btn-success btn-lg ">Get Started!</a>
+            </div>
+            <h2 class="arrow"><a href="#whatdo" class="glyphicon glyphicon-chevron-down"></a></h2>
+        </div>
+    </div>
+
+    <div class="excerpt excerpt-white" id="whatdo">
+        <div class="excerpt-wrapper">
+            <h2>About</h2>
+            <div class="separator">
+                <div class="line"></div>
+                <h3>&diams;</h3>
+                <div class="line"></div>
+            </div>
+            <p>...</p>
+        </div>
+    </div>
+    <div class="spacer-md">
+        <div class="triangle"></div>
+    </div>
+    <div class="excerpt excerpt-white" id="features">
+        <div class="excerpt-wrapper">
+            <h2>Features</h2>
+            <div class="separator">
+                <div class="line"></div>
+                <h3>&diams;</h3>
+                <div class="line"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h2><i class="fa fa-dollar" aria-hidden="true"></i></h2>
+                    <h3>Tip Management</h3>
+                    <p class="lead">Keep track of the tips you've earned through our dashboard</p>
+                </div>
+                <div class="col-md-4">
+                    <h2><i class="fa fa-calendar" aria-hidden="true"></i></h2>
+                    <h3>Manage Your Schedule</h3>
+                    <p class="lead">Keep track of your work days with our innovative scheduling system</p>
+                </div>
+                <div class="col-md-4">
+                    <h2><i class="fa fa-area-chart" aria-hidden="true"></i></h2>
+                    <h3>Graphical Overview</h3>
+                    <p class="lead">Take a hard look at your earnings over time with our graphing feature</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="excerpt excerpt-clear" id="numbers">
+        <div class="triangle"></div>
+        <div class="excerpt-wrapper">
+            <h2>Numbers</h2>
+            <div class="separator">
+                <div class="line"></div>
+                <h3>&diams;</h3>
+                <div class="line"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="light">Customers Served</h3>
+                    <h2 class="number">1000+</h2> </div>
+                <div class="col-md-4">
+                    <h3 class="light">Tips Recorded</h3>
+                    <h2 class="number">$2,846,560</h2> </div>
+                <div class="col-md-4">
+                    <h3 class="light">Satisfaction</h3>
+                    <h2 class="number">100%</h2> </div>
+            </div>
+        </div>
+    </div>
+    <div class="excerpt excerpt-white" id="clients">
+        <div class="excerpt-wrapper">
+            <h2>Clients</h2>
+            <div class="separator">
+                <div class="line"></div>
+                <h3>&diams;</h3>
+                <div class="line"></div>
+            </div>
+            <div class="row skills">
+                <div class="col-md-3">
+                    <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAQbAAAAJDJlZjIwNGVlLTY3NjUtNDkxMi1hNTJhLWRiZjIwYzk3YTQ3NQ.png" class="dev-logo">
+                </div>
+                <div class="col-md-3">
+                    <img src="http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/0023/3376/brand.gif?itok=8NXCym9n" class="dev-logo">
+                </div>
+                <div class="col-md-3">
+                    <img src="http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/0013/7567/brand.gif?itok=ehjYqEGX" class="dev-logo">
+                </div>
+                <div class="col-md-3">
+                    <img src="http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/032011/tgifridays.png?itok=AHG7EBKL" class="dev-logo">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="excerpt excerpt-grey" id="contact">
+        <div class="triangle"></div>
+        <div class="excerpt-wrapper">
+            <h2 class="text-center">Sign Up!</h2>
+            <div class="separator">
+                <div class="line"></div>
+                <h3>&diams;</h3>
+                <div class="line"></div>
+            </div>
+            <p class="lead">Convinced?</p>
+
+            <a href="app" class="btn btn-primary btn-lg btn-block">Sign Up Now</a>
+        </div>
+    </div>
+    <div class="footer">
+        <ul>
+            <li><a href="">Resume</a></li>
+            <li><a href="">Pricing</a></li>
+            <li><a href="https://github.com/VolitionDevelopment">Github</a></li>
+            <li><a href="theme/index.html">Get Theme</a></li>
+        </ul>
+        <ul class="right">
+            <li>&copy; 2016 Volition Development</li>
+        </ul>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/jquery.mixitup.js"></script>
+<script src="js/volition.js"></script>
+<script src="js/portfolio.js"></script>
+
 
 </body>
 </html>

@@ -18,4 +18,8 @@ app.controller('loginCtrl', function($scope, $rootScope, $cookies, $location){
     $scope.$watch(function() {return $cookies.get('currentUser');}, function(val){
         $rootScope.currentUser = val;
     })
+
+    if($scope.isLoggedIn()){
+        $location.url('/dashboard');
+    }
 });

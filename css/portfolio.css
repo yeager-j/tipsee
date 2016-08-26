@@ -1,0 +1,86 @@
+body {
+    background-image: url(../img/background.jpg);
+    position: relative;
+}
+
+iframe{
+    border: none;
+}
+
+#goblin{
+    max-height: 100%;
+}
+
+.mixitup .well{
+    height: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.portfolio-desc{
+    min-height: 100px;
+}
+
+.dev-logo{
+    max-width: 50%;
+}
+
+.skills{
+    height: 150px;
+    position: relative;
+}
+
+.skills .col-md-3{
+    height: 100%;
+}
+
+.skills p{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 87%;
+}
+
+.homepage-hero-module {
+    border-right: none;
+    border-left: none;
+    position: relative;
+}
+
+.no-video .video-container video,
+.touch .video-container video {
+    display: none;
+}
+.no-video .video-container .poster,
+.touch .video-container .poster {
+    display: block !important;
+}
+.video-container {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+}
+.video-container .poster img {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+.video-container .filter {
+    z-index: 100;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+.video-container video {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    top: 0;
+}
+.video-container video.fillWidth {
+    width: 100%;
+}
