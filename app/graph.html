@@ -1,14 +1,3 @@
-<div class="container content"><c3chart bindto-id="chart1">
-        <chart-column column-id="data-1" 
-                      column-values="30,200,100,400,150,250"
-                      column-type="line"/>        
-    </c3chart>
+<!-- Our graph Directive.  As you can see this is terribly difficult -->
+<c3-simple id="chart" config="chart"></c3-simple>
 
-    <h2>Using json based data coming from the model</h2>
-    <c3chart bindto-id="chart2" chart-data="datapoints" chart-columns="datacolumns">
-    </c3chart>
-
-    <h2>Add meaning to the x axis and change names and colors</h2>
-    <c3chart bindto-id="chart3" chart-data="datapoints2" chart-columns="datacolumns2" chart-x="datax2">
-    </c3chart>
-</div>
