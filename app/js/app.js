@@ -26,6 +26,10 @@ app.config(function($routeProvider){
             templateUrl: 'js/views/add-entry.html',
             controller: 'addEntryCtrl'
         })
+        .when('/data/:person', {
+            templateUrl: 'js/views/add-date-entry.html',
+            controller: 'addEntryCtrl'
+        })
 
         .when('/login', {
             templateUrl: 'js/views/login.html',

@@ -1,0 +1,92 @@
+
+    <div class="container content">
+       <div ng-controller="scheduleCtrl as vm">
+        <h1>Add New Event</h1>
+          <!-- <div class="login-form"> -->
+            <table class="table table-bordered">
+              <thead>
+                    <tr>
+                      <th>Title</th>
+                      <th>Information</th>
+                      <th>Starts at</th>
+                      <th>Ends at</th>
+                    </tr>
+              </thead>
+
+                <td> <input type="text" class="form-control" ng-model="event.title" placeholder="Input title here.."> </td>
+                <td> <input type="text" class="form-control" ng-model="event.info" placeholder="Input info here.."> </td>
+ <!-- START TIME -->
+                    <td>
+                       <input type="text" class="form-control" readonly uib-datepicker-popup="dd MMMM yyyy" 
+                       ng-model="event.startsAt" 
+                       is-open="event.startOpen"
+                    close-text="Close" >
+                  <span class="input-group-btn">
+                    <button
+                      type="button"
+                      class="btn btn-default"
+                      ng-click="vm.toggle($event, 'startOpen', event)">
+                      <i class="glyphicon glyphicon-calendar"></i>
+                    </button>
+                  </span>
+                </p>
+                <div
+                  uib-timepicker
+                  ng-model="event.startsAt"
+                  hour-step="1"
+                  minute-step="15"
+                  show-meridian="true">
+                </div>
+              </td>
+
+              <!-- END TIME -->
+              <td>
+                      <p class="input-group" style="max-width: 250px">
+                  <input
+                    type="text"
+                    class="form-control"
+                    readonly
+                    uib-datepicker-popup="dd MMMM yyyy"
+                    ng-model="event.endsAt"
+                    is-open="event.endOpen"
+                    close-text="Close">
+                  <span class="input-group-btn">
+                    <button
+                      type="button"
+                      class="btn btn-default"
+                      ng-click="vm.toggle($event, 'endOpen', event)">
+                      <i class="glyphicon glyphicon-calendar"></i>
+                    </button>
+                  </span>
+                </p>
+                <div
+                  uib-timepicker
+                  ng-model="event.endsAt"
+                  hour-step="1"
+                  minute-step="15"
+                  show-meridian="true">
+                </div>
+              </td>
+      
+          </tbody>
+
+           </table>
+             <!-- ADD BUTTON -->
+          
+            <button
+              class="btn btn-success pull-right"
+              ng-click="vm.addEvent()">
+              Add new
+              <div class="clearfix"> </div>
+            </button>
+            
+
+
+</div>
+</div>
+          <!-- end of login-form -->
+     <!--      </div> -->
+     <!-- End of Login wrapper -->
+<!--   </div>  -->
+  <!-- end of login -->
+<!-- </div>
