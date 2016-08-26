@@ -1,3 +1,5 @@
+// A factory for when Danny transfers over the graphs to nothing but D3 V4
+
 app.factory('d3Service', ['$document', '$q', '$rootScope',
     function($document, $q, $rootScope) {
       var d = $q.defer();

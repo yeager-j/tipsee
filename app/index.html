@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tipsee">
+<head>
+    <meta charset="UTF-8">
+    <title>Tipsee App</title>
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Candal|Titillium+Web" rel="stylesheet">
+
+    <link href="../css/material-kit.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+    <link href="../css/login.css" rel="stylesheet">
+    
+        <!-- Load c3.css -->
+    <link href="../css/c3.css" rel="stylesheet" type="text/css">
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/angular-bootstrap-colorpicker/3.0.25/css/colorpicker.min.css" rel="stylesheet">
+    <link href="//mattlewis92.github.io/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet">
+    
+</head>
+<body ng-controller="mainCtrl">
+
+<nav class="navbar navbar-fixed-top navbar-color-on-scroll navbar-info" ng-class="{'navbar-transparent': isActive('')}">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/">
+                Tipsee
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navigation-index" ng-controller="loginCtrl">
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-class="{active: isActive('data')}">
+                    <a href="#/data" ng-if="isLoggedIn()">
+                        <i class="fa fa-dashboard"></i> Data
+                    </a>
+                </li>
+                <li ng-class="{active: isActive('graph')}">
+                    <a href="#/graph" ng-if="isLoggedIn()">
+                        <i class="fa fa-area-chart"></i> Graphs
+                    </a>
+                </li>
+                <li ng-class="{active: isActive('schedule')}">
+                    <a href="#/schedule" ng-if="isLoggedIn()">
+                        <i class="fa fa-calendar"></i> Schedule
+                    </a>
+                </li>
+                <li ng-class="{active: isActive('dashboard')}">
+                    <a href="#/dashboard" ng-if="isLoggedIn()">
+                        <i class="fa fa-cog"></i> Dashboard
+                    </a>
+                </li>
+                <li ng-class="{active: isActive('login')}">
+                    <a href="#/" ng-click="logOut()" ng-if="isLoggedIn()">
+                        <i class="fa fa-remove"></i> Log Out
+                    </a>
+
+                    <a href="#/login" ng-if="!isLoggedIn()">
+                        <i class="fa fa-users"></i> Log In
+                    </a>
+                </li>
+                <p class="navbar-text" ng-if="isLoggedIn()">Welcome, {{currentUser}}!</p>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div ng-view></div>
+
+<!--Dependencies-->
+
+<script src="../node_modules/angular/angular.min.js"></script>
+<script src="../node_modules/angular-route/angular-route.min.js"></script>
+<script src="../node_modules/angular-cookies/angular-cookies.min.js"></script>
+<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script><script src="js/material-kit.js"></script>
+<script src="js/nouislider.min.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+
+<!-- d3.js and c3.js -->
+<script src="js/graph/d3-3.4.11.min.js" charset="utf-8"></script>
+<script src="js/graph/c3-0.2.4.min.js"></script>
+
+<!-- Simple Chart Directive Service -->
+<script src="services/simpleDir.js"></script>
+
+
+
+<!-- CALENDAR -->
+     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.4/interact.min.js"></script>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.0/ui-bootstrap-tpls.min.js"></script>
+     <script src="//cdn.rawgit.com/jkbrzt/rrule/v2.1.0/lib/rrule.js"></script>
+     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-bootstrap-colorpicker/3.0.25/js/bootstrap-colorpicker-module.min.js"></script>
+     <script src="//mattlewis92.github.io/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script>
+
+<!--Main App-->
+<script src="js/app.js"></script>
+<script src="js/helper.js"></script>
+
+<!--Controllers-->
+<script src="js/controllers/main-controller.js"></script>
+<script src="js/controllers/data-controller.js"></script>
+<script src="js/controllers/data-view-controller.js"></script>
+<script src="js/controllers/home-controller.js"></script>
+<script src="js/controllers/schedule-controller.js"></script>
+<script src="js/controllers/login-controller.js"></script>
+<script src="js/controllers/graph-controller.js"></script>
+<script src="js/controllers/entry-controller.js"></script>
+<script src="js/controllers/user-controller.js"></script>
+
+
+<!--Data-->
+<script src="js/data/data.js"></script>
+</body>
+</html>
