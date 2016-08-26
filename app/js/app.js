@@ -47,12 +47,8 @@ app.config(function($routeProvider){
             templateUrl: 'js/views/dashboard.html',
             controller: 'userCtrl'
         })
-<<<<<<< HEAD
-});
-=======
 
         .otherwise({
             redirectTo: '/login'
         })
 });
->>>>>>> develop
